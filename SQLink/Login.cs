@@ -34,19 +34,10 @@ namespace SQLink
             SqlDataAdapter adapter1 = new SqlDataAdapter(query, LogMEin);
             DataTable Tab1 = new DataTable();
             adapter1.Fill(Tab1);
-           // if (Tab1.Rows.Count == 1) // uruchamia okno success i zamyka okienko logowania
-         //   {
+
                greatJob B1 = new greatJob();
                 this.Hide();
                 B1.Show();
-
-
-               // MessageBox.Show("Success");  //drugie okno informujace o poprawnym logowaniu
-          //  }
-          //  else
-          //  {
-           //     MessageBox.Show("Check Username/Password");
-           // }
 
             }
 
