@@ -22,24 +22,36 @@ namespace SQLink
         //SqlConnection WinAuth = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
         private void button2_Click(object sender, EventArgs e)  //łączenie z bazą danych przy użyciu wprowadzonych danych (sa we bazie w tabeli)
         {
-			DbConnection.Initlizlie("SRV-SQL5", "SQLinkDB", IDtextBox.Text, PasstextBox.Text);
+            try
+            {
+                DbConnection.Initlizlie("SRV-SQL5", "SQLinkDB", IDtextBox.Text, PasstextBox.Text);
 
-			using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
-			{
-				conn.Open();
-			}
 
-			SqlConnection LogMEin = new SqlConnection(DbConnection.ConnectionString);
+                using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
+                {
+
+                    conn.Open();
+
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("SQL not responding");
+                return;
+            };
+
+            SqlConnection LogMEin = new SqlConnection(DbConnection.ConnectionString);
             string query = "Select * from SQLogin where username = '" + IDtextBox.Text.Trim() + "' and password = '" + PasstextBox.Text.Trim() + "'";
             SqlDataAdapter adapter1 = new SqlDataAdapter(query, LogMEin);
             DataTable Tab1 = new DataTable();
             adapter1.Fill(Tab1);
 
-               greatJob B1 = new greatJob();
-                this.Hide();
-                B1.Show();
+            greatJob B1 = new greatJob();
+            this.Hide();
+            B1.Show();
 
-            }
+        }
 
         private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na ID
         {
@@ -63,8 +75,8 @@ namespace SQLink
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)  // checkbox zapamietaj login 
         {
-			
-		}
+
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)  //checkbox windows auth 
         {
@@ -76,6 +88,6 @@ namespace SQLink
 
         }
     }
-    }
+}
 
 

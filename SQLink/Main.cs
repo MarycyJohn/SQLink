@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; //sql things and stuff
+using System.Data.SqlClient;
 using System.Xml.Linq;
 
 namespace SQLink
@@ -22,19 +22,14 @@ namespace SQLink
         private void button1_Click(object sender, EventArgs e) //check db button
         {
             SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-            SqlCommand cmdX = SQLCon.CreateCommand(); // new SqlCommand();
+            SqlCommand cmdX = SQLCon.CreateCommand();
             SQLCon.Open();
             cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo";
+            cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo";   //TODO BY PROCEDURE
             cmdX.ExecuteNonQuery();
             disp_data2();
             SQLCon.Close();
         }
-
-        //private void label1_Click(object sender, EventArgs e) //check db napis
-        //{
-
-        //}
 
         private void button2_Click(object sender, EventArgs e)  //connect to db guzik w main oknie
         {
@@ -53,14 +48,14 @@ namespace SQLink
 
         }
 
-        private void GoBtn_Click(object sender, EventArgs e) //exeture button
+        private void GoBtn_Click(object sender, EventArgs e) //execure button
         {
             using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString))
             {
 
                 {
                     SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-                    SqlCommand cmdZ = SQLCon.CreateCommand(); // new SqlCommand();
+                    SqlCommand cmdZ = SQLCon.CreateCommand(); 
                     SQLCon.Open();
                     cmdZ.CommandType = CommandType.Text;
                     cmdZ.CommandText = " " + EnterTextBox.Text.Trim() + " ";
@@ -68,34 +63,14 @@ namespace SQLink
                     disp_data();
                     SQLCon.Close();
                 }
-                //string EXECquery = " " + EnterTextBox.Text.Trim() + " "; //sql injection
-                //SqlDataAdapter adapter2 = new SqlDataAdapter(EXECquery, conn); //queryString to connection string na zapytania
-                //DataTable Tab2 = new DataTable();
-                //adapter2.Fill(Tab2);
-                //DataSet ds = new DataSet();
-                ////MainViewGrid.DataSource = adapter2. queryString.DataSource;
             }
         }
-        //private void GoBtn_Click(object sender, EventArgs e) //exeture button
-        //      {
-        //          string connectionString = @"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True";
-
-        //          using (SqlConnection conn = new SqlConnection(connectionString))
-        //          {
-        //              string EXECquery = " " + EnterTextBox.Text.Trim() + " "; //sql injection
-        //              SqlDataAdapter adapter2 = new SqlDataAdapter(EXECquery, queryString); //queryString to connection string na zapytania
-        //              DataTable Tab2 = new DataTable();
-        //              adapter2.Fill(Tab2);
-        //              DataSet ds = new DataSet();
-        //              MainViewGrid.DataSource = queryString.DataSource;
-        //          }
-        //      }
 
         private void Poligon_Click(object sender, EventArgs e) //guzik do testow
 
         {
             SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-            SqlCommand cmdX = SQLCon.CreateCommand(); // new SqlCommand();
+            SqlCommand cmdX = SQLCon.CreateCommand(); 
             SQLCon.Open();
             cmdX.CommandType = CommandType.Text;
             cmdX.CommandText = "select @@version;";
@@ -107,12 +82,10 @@ namespace SQLink
         public void disp_data()
         {
             SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
-            //SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True"); //to jest nowe w avenidzie
             SQLCon.Open();
             SqlCommand cmdX = SQLCon.CreateCommand();
             cmdX.CommandType = CommandType.Text;
             cmdX.CommandText = " " + EnterTextBox.Text.Trim() + " ";
-            //cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo" + EnterTextBox.Text.Trim(); //to jest nowe w avenidzie
             cmdX.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmdX);
@@ -123,13 +96,11 @@ namespace SQLink
 
         public void disp_data2()
         {
-            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
-            //SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True"); //to jest nowe w avenidzie
+            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");  //TODO linknąć dane z okien (serwer, baza danych, port)
             SQLCon.Open();
             SqlCommand cmdX = SQLCon.CreateCommand();
             cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo";
-            //cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo" + EnterTextBox.Text.Trim(); //to jest nowe w avenidzie
+            cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo";  //TODO BY PROCEDURE powielone z linia 22
             cmdX.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmdX);
@@ -138,13 +109,17 @@ namespace SQLink
             SQLCon.Close();
         }
 
-
-
-        private void Main_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)   //pierwsze łączenie z bazą, domyślnie lokalnie
         {
-            // TODO: This line of code loads data into the 'sQLinkDBDataSet.TEST' table. You can move, or remove it, as needed.
-            this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
-            disp_data();
+            try {
+                this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
+                disp_data();
+            }
+            catch(Exception)
+            {
+                new System.ArgumentNullException();
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -261,6 +236,11 @@ namespace SQLink
                 MainViewGrid.DataSource = dt;
                 conLS.Close();
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
