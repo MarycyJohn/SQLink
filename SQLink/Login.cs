@@ -38,6 +38,8 @@ namespace SQLink
                     return;
                     };
 
+
+            //to ponizej potencjalnie zbedne
             SqlConnection LogMEin = new SqlConnection(DbConnection.ConnectionString);
             string query = "Select * from SQLogin where username = '" + IDtextBox.Text.Trim() + "' and password = '" + PasstextBox.Text.Trim() + "'";
             SqlDataAdapter adapter1 = new SqlDataAdapter(query, LogMEin);
@@ -85,6 +87,26 @@ namespace SQLink
 
         private void srvnamebox_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void ADConnButton_Click(object sender, EventArgs e)
+        {
+            ADConnection.ADInitlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
+            using (SqlConnection connAD = new SqlConnection(ADConnection.ADConnectionString)) //testuje czy działa połączenie
+
+                try
+                {
+                    connAD.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    connAD.Close();
+                    ADConnection.isADInitilized = false;
+                    return;
+                };
+
 
         }
     }

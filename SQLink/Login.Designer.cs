@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dbnamebox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.ADConnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ConnectDBbtn
@@ -178,11 +179,22 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "DB name (optional)";
             // 
+            // ADConnButton
+            // 
+            this.ADConnButton.Location = new System.Drawing.Point(260, 160);
+            this.ADConnButton.Name = "ADConnButton";
+            this.ADConnButton.Size = new System.Drawing.Size(75, 23);
+            this.ADConnButton.TabIndex = 16;
+            this.ADConnButton.Text = "AD Connect";
+            this.ADConnButton.UseVisualStyleBackColor = true;
+            this.ADConnButton.Click += new System.EventHandler(this.ADConnButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 209);
+            this.Controls.Add(this.ADConnButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dbnamebox);
             this.Controls.Add(this.label4);
@@ -220,6 +232,7 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox dbnamebox;
 		private System.Windows.Forms.Label label5;
-	}
+        private System.Windows.Forms.Button ADConnButton;
+    }
 }
 
