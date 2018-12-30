@@ -23,7 +23,7 @@ namespace SQLink
         private void button2_Click(object sender, EventArgs e)  //łączenie z bazą danych przy użyciu wprowadzonych danych (sa we bazie w tabeli)
         {
             
-           DbConnection.Initlizlie("SRV-SQL5", "SQLinkDB", IDtextBox.Text, PasstextBox.Text);
+           DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
            using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
 
                 try
@@ -79,6 +79,11 @@ namespace SQLink
         }
 
         private void Login_Load(object sender, EventArgs e)  //okno login ogólne 
+        {
+
+        }
+
+        private void srvnamebox_TextChanged(object sender, EventArgs e)
         {
 
         }
