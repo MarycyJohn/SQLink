@@ -18,13 +18,16 @@ namespace SQLink
 
                 if (isADInitilized)
                     throw new Exception("Connection already initilized. Make sure you have only one point of initalization");
-                                                //##################Dodać tutaj popUP window
+                                                //##################Dodać tutaj popUP window zamiast tego
 
                 isADInitilized = true;
-                ADconnectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=SSPI; User Id={2};Password={3}",
+            //ADconnectionString = string.Format("Data Source={0};Initial Catalog={1};Integrated Security=SSPI; User Id={2};Password={3}",
+                ADconnectionString = string.Format("Server = {0}; Database= master; Integrated Security=True;",
                                     server, db, login, user);
             }
-        //Data Source=SRV=SQL5;Initial Catalog=Master;Integrated Security=SSPI; User ID = SRV=SQL5\aduster;Password=P@ssw0rd;
+            //Data Source=SRV=SQL5;Initial Catalog=Master;Integrated Security=SSPI; User ID = SRV=SQL5\aduster;Password=P@ssw0rd;
+            
+        
 
 
         public static string ADConnectionString

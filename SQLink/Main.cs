@@ -69,14 +69,10 @@ namespace SQLink
         private void Poligon_Click(object sender, EventArgs e) //guzik do testow
 
         {
-            SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-            SqlCommand cmdX = SQLCon.CreateCommand(); 
-            SQLCon.Open();
-            cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = "select @@version;";
-            cmdX.ExecuteNonQuery();
-            disp_data2();
-            SQLCon.Close();
+            SqlConnection ADCon = new SqlConnection("Server = SRV-SQL5; Database= master; Integrated Security=True;");
+            ADCon.Open();
+            SqlCommand cmdASD;
+            string s = "delete employee where empid=103";
         }
 
         public void disp_data()
@@ -131,8 +127,19 @@ namespace SQLink
         {
 
 
-                {
-                    SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
+        {
+
+                /*  if (Login.checkBox1_Checked.checked)
+                    {
+                        SqlConnection conVer = new SqlConnection(ADConnection.ADConnectionString)
+                    };
+                    else
+                    {
+                        SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
+                    }*/
+
+
+                SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
                     SqlCommand cmdX = conVer.CreateCommand(); // new SqlCommand();
                     conVer.Open();
                     cmdX.CommandType = CommandType.Text;

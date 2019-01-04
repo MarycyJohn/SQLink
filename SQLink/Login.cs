@@ -77,7 +77,14 @@ namespace SQLink
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)  //checkbox windows auth 
         {
-
+            if (checkBoxAD.Checked)
+            {
+                //Połączenie ma być domenowe
+            }
+            else 
+            {
+                //Połączenie po SQL auth
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)  //okno login ogólne 

@@ -33,7 +33,7 @@
             this.PasstextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxAD = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.srvnamebox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -98,17 +98,17 @@
             this.label3.Text = "Password";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // checkBox1
+            // checkBoxAD
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox1.Location = new System.Drawing.Point(260, 119);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 40);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Windows \r\nAuthentication";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxAD.AutoSize = true;
+            this.checkBoxAD.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxAD.Location = new System.Drawing.Point(260, 119);
+            this.checkBoxAD.Name = "checkBoxAD";
+            this.checkBoxAD.Size = new System.Drawing.Size(118, 40);
+            this.checkBoxAD.TabIndex = 8;
+            this.checkBoxAD.Text = "Windows \r\nAuthentication";
+            this.checkBoxAD.UseVisualStyleBackColor = true;
+            this.checkBoxAD.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -202,7 +202,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.srvnamebox);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxAD);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.PasstextBox);
@@ -224,7 +224,7 @@
         private System.Windows.Forms.TextBox PasstextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxAD;
         private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.TextBox srvnamebox;
 		private System.Windows.Forms.Label label1;
