@@ -46,13 +46,13 @@ namespace SQLink
             //SqlDataAdapter adapter1 = new SqlDataAdapter(query, LogMEin);
             //DataTable Tab1 = new DataTable();
             //adapter1.Fill(Tab1);
-            
-            
+
+
             //greatJob B1 = new greatJob();
-           // this.Hide();
-          //  B1.Show();
+            //  B1.Show();
 
-
+            MessageBox.Show("Connected");
+            this.Hide();
             Main C1 = new Main();
             C1.Show();
         }

@@ -120,7 +120,8 @@ namespace SQLink
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
+            Application.Exit();
         }
 
         private void Version_Click(object sender, EventArgs e)
