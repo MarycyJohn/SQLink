@@ -122,6 +122,12 @@ namespace SQLink
                     return;
                 };
 
+            MessageBox.Show("You are now connected to " + srvnamebox.Text,
+    "Server Info");
+            this.Hide();
+            Main C2 = new Main();
+            C2.Show();
+
 
         }
     }

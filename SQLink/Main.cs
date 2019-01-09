@@ -170,8 +170,6 @@ namespace SQLink
                 MainViewGrid.DataSource = dt;
                 conAC.Close();
             }
-
-
         }
 
         private void ActiveS_Click(object sender, EventArgs e)
