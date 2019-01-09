@@ -51,7 +51,8 @@ namespace SQLink
             //greatJob B1 = new greatJob();
             //  B1.Show();
 
-            MessageBox.Show("Connected");
+            MessageBox.Show("You are now connected to " + srvnamebox.Text,
+                "Server Info");
             this.Hide();
             Main C1 = new Main();
             C1.Show();
