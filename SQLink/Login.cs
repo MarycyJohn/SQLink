@@ -40,14 +40,21 @@ namespace SQLink
 
 
             //to ponizej potencjalnie zbedne
-            SqlConnection LogMEin = new SqlConnection(DbConnection.ConnectionString);
-            string query = "Select * from SQLogin where username = '" + IDtextBox.Text.Trim() + "' and password = '" + PasstextBox.Text.Trim() + "'";
-            SqlDataAdapter adapter1 = new SqlDataAdapter(query, LogMEin);
-            DataTable Tab1 = new DataTable();
-            adapter1.Fill(Tab1);
-            greatJob B1 = new greatJob();
-            this.Hide();
-            B1.Show();
+            //SqlConnection LogMEin = new SqlConnection(DbConnection.ConnectionString);
+            //string query = "Select * from SQLogin where username = '" + IDtextBox.Text.Trim() + "' and password = '" + PasstextBox.Text.Trim() + "'";
+            //SqlDataAdapter adapter1 = new SqlDataAdapter();
+            //SqlDataAdapter adapter1 = new SqlDataAdapter(query, LogMEin);
+            //DataTable Tab1 = new DataTable();
+            //adapter1.Fill(Tab1);
+            
+            
+            //greatJob B1 = new greatJob();
+           // this.Hide();
+          //  B1.Show();
+
+
+            Main C1 = new Main();
+            C1.Show();
         }
 
         private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na ID

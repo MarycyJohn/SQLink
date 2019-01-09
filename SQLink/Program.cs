@@ -17,7 +17,8 @@ namespace SQLink
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());  // program startuje z okna Main
+            // Application.Run(new Main());  // program startuje z okna Main
+            Application.Run(new Login());  // program startuje z okna Main
         }
     }
 }
