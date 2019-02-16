@@ -47,10 +47,14 @@ namespace SQLink
             DataTable Tab1 = new DataTable();
             adapter1.Fill(Tab1);
 
-            greatJob B1 = new greatJob();
-            this.Hide();
-            B1.Show();
-
+      //        greatJob B1 = new greatJob();
+              this.Hide();
+      //        B1.Show();
+            
+            Main M1 = new Main();
+            // uruchamia okno Main po prawidłowym logowaniu
+            M1.Show();
+        
         }
 
         private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na ID

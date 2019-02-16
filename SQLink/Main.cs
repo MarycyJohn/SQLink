@@ -125,6 +125,8 @@ namespace SQLink
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+            Environment.Exit(0);
+            //Application.Exit;
         }
 
         private void Version_Click(object sender, EventArgs e)
@@ -134,7 +136,8 @@ namespace SQLink
                 {
                     SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
                     SqlCommand cmdX = conVer.CreateCommand(); // new SqlCommand();
-                    conVer.Open();
+                //totaj try catch (hasło sql wygasło)
+                conVer.Open();
                     cmdX.CommandType = CommandType.Text;
                     cmdX.CommandText = "select @@VERSION";
                 cmdX.ExecuteNonQuery();
