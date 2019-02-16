@@ -7,9 +7,12 @@ namespace SQLink
 	{
 		private static string connectionString;
 
-		private static bool isInitilized = false;
-		public static void Initlizlie(string server, string db, string login, string user)
+		public static bool isInitilized = false;
+
+
+        public static void Initlizlie(string server, string db, string login, string user)
 		{
+
 			if (isInitilized)
 				throw new Exception("Connection already initilized. Make sure you have only one point of initalization");
 
@@ -18,12 +21,16 @@ namespace SQLink
 								server, db, login, user);
 		}
 
+
+
 		public static string ConnectionString
 		{
 			get
 			{
-				if (!isInitilized)
-					throw new Exception("Connection string is not initilized. Make sure you intilalize it first");
+                if (!isInitilized)          //#####################Przerobić na MessageBox
+
+                throw new Exception("Connection string is not initilized. Make sure you intilalize it first");
+
 
 				return connectionString;
 			}

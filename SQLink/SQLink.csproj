@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADConnection.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="greatJob.cs">
       <SubType>Form</SubType>
