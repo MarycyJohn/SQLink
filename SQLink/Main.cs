@@ -39,12 +39,13 @@ namespace SQLink
 
         }
 
-        private void button2_Click(object sender, EventArgs e)  //connect to db guzik w main oknie
+        private void button2_Click(object sender, EventArgs e)  //reconnect to db guzik w main oknie
         {
 
             Login A1 = new Login();
             // uruchamia okno login
             A1.Show();
+            //DODAĆ ZAMYKANIE OBECNYCH POŁĄCZEŃ, RESET CONNECTIONS TO SQL
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // glowne okno data grid
@@ -63,16 +64,34 @@ namespace SQLink
             {
 
                 {
-                    SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-                    SqlCommand cmdZ = SQLCon.CreateCommand(); 
-                    SQLCon.Open();
-                    cmdZ.CommandType = CommandType.Text;
-                    cmdZ.CommandText = " " + EnterTextBox.Text.Trim() + " ";
+                    SqlConnection SQL01 = new SqlConnection(DbConnection.ConnectionString);
+                    SqlCommand cmd1 = SQL01.CreateCommand(); 
+                    SQL01.Open();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = " " + EnterTextBox.Text.Trim() + " ";
+                
+                    cmd1.ExecuteNonQuery(); // try na to dac z sys exception
+                    DataTable T1 = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd1);
+                    da.Fill(T1);
+                    MainViewGrid.DataSource = T1;
+                    //disp_data();
+                    SQL01.Close();
 
-                    cmdZ.ExecuteNonQuery(); // try na to dac z sys exception
+                    /*
+            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");  // na sztywno wklepane
+            SqlCommand cmdX = SQLCon.CreateCommand();
+            SQLCon.Open();
+            cmdX.CommandType = CommandType.Text;
+            cmdX.CommandText = " " + EnterTextBox.Text.Trim() + " ";
+            cmdX.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmdX);
+            da.Fill(dt);
+            MainViewGrid.DataSource = dt;
+            SQLCon.Close();
+                     */
 
-                    disp_data();
-                    SQLCon.Close();
                 }
             }
         }
@@ -90,29 +109,19 @@ namespace SQLink
             SQLCon.Close();
         }
 
-
-        public void disp_data()
+       
+        public void disp_data()  //wyświetlana na wstępnie pusta zawartość disp data by grid był czysty
         {
-            //Login wf = new Login(this);
 
-
-            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");  // na sztywno wklepane
-            SQLCon.Open();
-            SqlCommand cmdX = SQLCon.CreateCommand();
-            cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = " " + EnterTextBox.Text.Trim() + " ";
-            cmdX.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmdX);
-            da.Fill(dt);
-            MainViewGrid.DataSource = dt;
-            SQLCon.Close();
         }
+
+    
 
         private void Main_Load(object sender, EventArgs e)   //pierwsze łączenie z bazą, domyślnie lokalnie
         {
             try {
                 this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
+
                 disp_data();
             }
             catch(Exception)
