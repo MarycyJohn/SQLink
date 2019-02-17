@@ -78,20 +78,6 @@ namespace SQLink
                     //disp_data();
                     SQL01.Close();
 
-                    /*
-            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");  // na sztywno wklepane
-            SqlCommand cmdX = SQLCon.CreateCommand();
-            SQLCon.Open();
-            cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = " " + EnterTextBox.Text.Trim() + " ";
-            cmdX.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmdX);
-            da.Fill(dt);
-            MainViewGrid.DataSource = dt;
-            SQLCon.Close();
-                     */
-
                 }
             }
         }
@@ -110,10 +96,10 @@ namespace SQLink
         }
 
        
-        public void disp_data()  //wyświetlana na wstępnie pusta zawartość disp data by grid był czysty
+       public void disp_data()  //wyświetlana na wstępnie pusta zawartość disp data by grid był czysty
         {
 
-        }
+        } 
 
     
 
@@ -212,8 +198,9 @@ namespace SQLink
                 cmdZ.CommandType = CommandType.Text;
                 cmdZ.CommandText = "kill " + IDbox.Text.Trim() + " ";
                 cmdZ.ExecuteNonQuery();
-                disp_data();
+                //disp_data();
                 conKill.Close();
+                MessageBox.Show("Session " + IDbox.Text.Trim() + " has been killed", "Session info");
             }
         }
 
