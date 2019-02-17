@@ -14,8 +14,12 @@ namespace SQLink
 		{
 
 			if (isInitilized)
-				throw new Exception("Connection already initilized. Make sure you have only one point of initalization");
+				 new Exception("Connection already initilized. Make sure you have only one point of initalization");
  
+            //MessageBox.Show("Connection already initilized. Make sure you have only one point of initalization You are now connected to " + srvnamebox.Text,
+             //   "Server Info");
+
+
 			isInitilized = true;
 			connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
 								server, db, login, user);

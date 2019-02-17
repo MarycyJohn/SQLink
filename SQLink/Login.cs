@@ -23,37 +23,23 @@ namespace SQLink
         private void button2_Click(object sender, EventArgs e)  //łączenie z bazą danych przy użyciu wprowadzonych danych (sa we bazie w tabeli)
         {
 
+            //try //try było na samo conn.open poniżej, teraz umożliwia wielokrotne połączenie
+            //{
+                DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
+                using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
+            try
+            {
+            conn.Open();
+            }
+             catch (Exception ex)
+            {
+             MessageBox.Show(ex.Message);
+             conn.Close();
+             DbConnection.isInitilized = false;
+             return;
+             };
 
-           DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
-           using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
-
-                try
-                {
-                    conn.Open();
-                }
-                    catch (Exception ex)
-                    {
-                    MessageBox.Show(ex.Message);
-                    conn.Close();
-                    DbConnection.isInitilized = false;
-                    return;
-                    };
-
-            //
-            //to ponizej potencjalnie zbedne
-            //SqlConnection LogMEin = new SqlConnection(DbConnection.ConnectionString);
-            //string query = "Select * from SQLogin where username = '" + IDtextBox.Text.Trim() + "' and password = '" + PasstextBox.Text.Trim() + "'";
-            //SqlDataAdapter adapter1 = new SqlDataAdapter();
-            //SqlDataAdapter adapter1 = new SqlDataAdapter(query, LogMEin);
-            //DataTable Tab1 = new DataTable();
-            //adapter1.Fill(Tab1);
-
-
-            //greatJob B1 = new greatJob();
-            //  B1.Show();
-
-            MessageBox.Show("You are now connected to " + srvnamebox.Text,
-                "Server Info");
+            MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
             this.Hide();
             Main C1 = new Main();
             C1.Show();
@@ -68,8 +54,6 @@ namespace SQLink
             InitializeComponent();
         }
         //transfer adresu serwera miedzy formami
-
-
 
 
         private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na ID
