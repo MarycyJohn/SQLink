@@ -66,7 +66,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(496, 324);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 27);
             this.button1.TabIndex = 3;
@@ -80,7 +80,7 @@
             this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.Location = new System.Drawing.Point(15, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 27);
             this.button2.TabIndex = 4;
@@ -101,7 +101,7 @@
             // EnterTextBox
             // 
             this.EnterTextBox.Location = new System.Drawing.Point(15, 49);
-            this.EnterTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EnterTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EnterTextBox.Multiline = true;
             this.EnterTextBox.Name = "EnterTextBox";
             this.EnterTextBox.Size = new System.Drawing.Size(455, 91);
@@ -113,7 +113,7 @@
             this.GoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.GoBtn.BackColor = System.Drawing.SystemColors.Highlight;
             this.GoBtn.Location = new System.Drawing.Point(480, 49);
-            this.GoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.GoBtn.Name = "GoBtn";
             this.GoBtn.Size = new System.Drawing.Size(97, 57);
             this.GoBtn.TabIndex = 7;
@@ -126,7 +126,7 @@
             this.Poligon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Poligon.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Poligon.Location = new System.Drawing.Point(479, 113);
-            this.Poligon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Poligon.Margin = new System.Windows.Forms.Padding(4);
             this.Poligon.Name = "Poligon";
             this.Poligon.Size = new System.Drawing.Size(172, 28);
             this.Poligon.TabIndex = 8;
@@ -150,7 +150,7 @@
             this.MainViewGrid.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.MainViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainViewGrid.Location = new System.Drawing.Point(16, 177);
-            this.MainViewGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MainViewGrid.Margin = new System.Windows.Forms.Padding(4);
             this.MainViewGrid.Name = "MainViewGrid";
             this.MainViewGrid.Size = new System.Drawing.Size(456, 267);
             this.MainViewGrid.TabIndex = 5;
@@ -159,7 +159,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(655, 220);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(133, 22);
             this.textBox2.TabIndex = 13;
@@ -172,7 +172,7 @@
             this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button4.Location = new System.Drawing.Point(496, 217);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 27);
             this.button4.TabIndex = 14;
@@ -185,7 +185,7 @@
             this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button5.Location = new System.Drawing.Point(653, 174);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(128, 27);
             this.button5.TabIndex = 15;
@@ -195,7 +195,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(653, 254);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(133, 22);
             this.textBox3.TabIndex = 16;
@@ -207,7 +207,7 @@
             this.Active_connection.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Active_connection.BackColor = System.Drawing.SystemColors.Highlight;
             this.Active_connection.Location = new System.Drawing.Point(496, 288);
-            this.Active_connection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Active_connection.Margin = new System.Windows.Forms.Padding(4);
             this.Active_connection.Name = "Active_connection";
             this.Active_connection.Size = new System.Drawing.Size(138, 27);
             this.Active_connection.TabIndex = 18;
@@ -218,7 +218,7 @@
             // IDbox
             // 
             this.IDbox.Location = new System.Drawing.Point(707, 293);
-            this.IDbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IDbox.Margin = new System.Windows.Forms.Padding(4);
             this.IDbox.Name = "IDbox";
             this.IDbox.Size = new System.Drawing.Size(36, 22);
             this.IDbox.TabIndex = 19;
@@ -231,7 +231,7 @@
             this.Kill_session_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Kill_session_button.BackColor = System.Drawing.SystemColors.Highlight;
             this.Kill_session_button.Location = new System.Drawing.Point(656, 290);
-            this.Kill_session_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Kill_session_button.Margin = new System.Windows.Forms.Padding(4);
             this.Kill_session_button.Name = "Kill_session_button";
             this.Kill_session_button.Size = new System.Drawing.Size(36, 27);
             this.Kill_session_button.TabIndex = 20;
@@ -257,7 +257,7 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Location = new System.Drawing.Point(779, 15);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(33, 30);
             this.button3.TabIndex = 22;
@@ -305,7 +305,7 @@
             // 
             this.LogSpace.BackColor = System.Drawing.SystemColors.Highlight;
             this.LogSpace.Location = new System.Drawing.Point(636, 358);
-            this.LogSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LogSpace.Margin = new System.Windows.Forms.Padding(4);
             this.LogSpace.Name = "LogSpace";
             this.LogSpace.Size = new System.Drawing.Size(100, 31);
             this.LogSpace.TabIndex = 26;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.MainViewGrid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

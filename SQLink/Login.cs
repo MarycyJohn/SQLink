@@ -27,17 +27,17 @@ namespace SQLink
             //{
                 DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
                 using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
-            try
-            {
-            conn.Open();
+                                                                                              try
+                                                                                              {
+                    conn.Open();
             }
-             catch (Exception ex)
+            catch (Exception ex)
             {
-             MessageBox.Show(ex.Message);
-             conn.Close();
-             DbConnection.isInitilized = false;
-             return;
-             };
+                MessageBox.Show(ex.Message);
+                conn.Close();
+                DbConnection.isInitilized = false;
+                return;
+            };
 
             MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
             this.Hide();
@@ -46,7 +46,7 @@ namespace SQLink
         }
         
         
-        //transfer adresu serwera miedzy formami
+        //transfer adresu serwera miedzy formami (faza testów
         Main originalForm;
         public Login(Main incomingForm)
         {

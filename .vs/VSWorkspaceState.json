@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\SQLink"
+    "\\SQLink",
+    "\\SQLink\\bin",
+    "\\SQLink\\obj"
   ],
-  "SelectedNode": "\\SQLink\\DbConnection.cs",
   "PreviewInSolutionExplorer": false
 }
