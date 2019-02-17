@@ -55,7 +55,7 @@ namespace SQLink
             }
             catch (Exception ex4)
             {
-                MessageBox.Show(ex4.Message);
+                MessageBox.Show(ex4.Message, "SQLink Info");
                 return;
             };
 
@@ -130,12 +130,12 @@ namespace SQLink
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "SQLink Info");
                     connAD.Close();
                     ADConnection.isADInitilized = false;
                     return;
                 };
-            MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
+            MessageBox.Show("You are now connected to " + srvnamebox.Text, "SQLink Info");
             this.Hide();
             Main C2 = new Main();
             C2.Show();

@@ -76,7 +76,7 @@ namespace SQLink
                         }
                         catch (Exception ex2)
                         {
-                            MessageBox.Show(ex2.Message, "SQLink Error");
+                            MessageBox.Show(ex2.Message, "SQLink Info");
                             SQL01.Close();
                             return;
                         };
@@ -120,7 +120,7 @@ namespace SQLink
             }
             catch(Exception ex3)
             {
-                MessageBox.Show(ex3.Message, "SQLink Error");
+                MessageBox.Show(ex3.Message, "SQLink Info");
                 return;
             }
 
@@ -231,7 +231,19 @@ namespace SQLink
                 conKill.Open();
                 cmdZ.CommandType = CommandType.Text;
                 cmdZ.CommandText = "kill " + IDbox.Text.Trim() + " ";
-                cmdZ.ExecuteNonQuery();
+               // cmdZ.ExecuteNonQuery();
+                
+                 try
+                    {
+                    cmdZ.ExecuteNonQuery();
+                    }
+                    catch (Exception ex5)
+                    {
+                    MessageBox.Show("Type Session ID number to close it." + "\n" + ex5.Message, "SQLink info");
+                    return;
+                    };
+
+
                 //disp_data();
                 conKill.Close();
                 MessageBox.Show("Session " + IDbox.Text.Trim() + " has been killed", "Session info");
