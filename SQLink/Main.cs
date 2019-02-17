@@ -113,7 +113,7 @@ namespace SQLink
 
         private void Main_Load(object sender, EventArgs e)   //pierwsze łączenie z bazą, domyślnie lokalnie
         {
-            try {
+           try {
                 this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
 
                 //disp_data();
@@ -121,34 +121,16 @@ namespace SQLink
             catch(Exception ex3)
             {
                 MessageBox.Show(ex3.Message, "SQLink Info");
-                return;
+                return; 
             }
 
             /*
-             
-                         try
-                        {
-                            cmd1.ExecuteNonQuery();
-                        }
-                        catch (Exception ex2)
-                        {
-                            MessageBox.Show(ex2.Message, "SQLink Error");
-                            SQL01.Close();
-                            return;
-                        };
 
-                try {
-                this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
-
-                //disp_data();
-            }
-            catch(Exception)
+Było z    catch(Exception)
             {
                 new System.ArgumentNullException();
             }
              */
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -160,23 +142,23 @@ namespace SQLink
 
         private void Version_Click(object sender, EventArgs e)
         {
-
-
                 {
-                    SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
-                    SqlCommand cmdX = conVer.CreateCommand(); // new SqlCommand();
-                                                              //totaj try catch (hasło sql wygasło)
+
+                SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
+                SqlCommand cmdX = conVer.CreateCommand();
                 try
-                {
+                    {
+                    
                     conVer.Open();
-                }
-                catch (Exception)
-                {
-                    new System.ArgumentNullException();
-                }
+                    }
+                    catch (Exception ex6)
+                    {
+                    MessageBox.Show(ex6.Message, "SQLink info");
+                    return;
+                    };
 
-                    cmdX.CommandType = CommandType.Text;
-                    cmdX.CommandText = "select @@VERSION";
+                cmdX.CommandType = CommandType.Text;
+                cmdX.CommandText = "select @@VERSION";
                 cmdX.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmdX);
@@ -184,7 +166,6 @@ namespace SQLink
                 MainViewGrid.DataSource = dt;
                 conVer.Close();
                 }
-
         }
 
         private void Active_connection_Click(object sender, EventArgs e)
@@ -202,8 +183,6 @@ namespace SQLink
                 MainViewGrid.DataSource = dt;
                 conAC.Close();
             }
-
-
         }
 
         private void ActiveS_Click(object sender, EventArgs e)
@@ -232,7 +211,7 @@ namespace SQLink
                 cmdZ.CommandType = CommandType.Text;
                 cmdZ.CommandText = "kill " + IDbox.Text.Trim() + " ";
                // cmdZ.ExecuteNonQuery();
-                
+              
                  try
                     {
                     cmdZ.ExecuteNonQuery();
@@ -242,7 +221,6 @@ namespace SQLink
                     MessageBox.Show("Type Session ID number to close it." + "\n" + ex5.Message, "SQLink info");
                     return;
                     };
-
 
                 //disp_data();
                 conKill.Close();

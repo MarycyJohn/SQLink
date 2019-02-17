@@ -22,18 +22,15 @@ namespace SQLink
         //SqlConnection WinAuth = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
         private void button2_Click(object sender, EventArgs e)  //łączenie z bazą danych przy użyciu wprowadzonych danych (sa we bazie w tabeli)
         {
-
-            //try //try było na samo conn.open poniżej, teraz umożliwia wielokrotne połączenie
-            //{
-                DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
-                using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
-                                                                                              try
-                                                                                              {
-                    conn.Open();
+            DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
+            using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
+            try
+            {
+                conn.Open();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "SQLink info");
                 conn.Close();
                 DbConnection.isInitilized = false;
                 return;
@@ -63,12 +60,12 @@ namespace SQLink
         
         
         //transfer adresu serwera miedzy formami (faza testów
-        Main originalForm;
+       /* Main originalForm;
         public Login(Main incomingForm)
         {
             originalForm = incomingForm;
             InitializeComponent();
-        }
+        }*/
         //transfer adresu serwera miedzy formami
 
 
