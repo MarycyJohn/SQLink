@@ -41,8 +41,24 @@ namespace SQLink
 
             MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
             this.Hide();
-            Main C1 = new Main();
-            C1.Show();
+
+            try   //sprawdza czy jest otwarte okno main, jak jest to je zamyka
+            {
+
+            if (Application.OpenForms.OfType<Main>().Count() == 1)
+                Application.OpenForms.OfType<Main>().First().Close();
+
+            Main frm = new Main();
+            frm.Show();
+
+
+            }
+            catch (Exception ex4)
+            {
+                MessageBox.Show(ex4.Message);
+                return;
+            };
+
         }
         
         

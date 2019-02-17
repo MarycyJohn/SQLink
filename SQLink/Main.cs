@@ -46,6 +46,7 @@ namespace SQLink
             // uruchamia okno login
             A1.Show();
             //DODAĆ ZAMYKANIE OBECNYCH POŁĄCZEŃ, RESET CONNECTIONS TO SQL
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // glowne okno data grid
@@ -117,11 +118,37 @@ namespace SQLink
 
                 //disp_data();
             }
+            catch(Exception ex3)
+            {
+                MessageBox.Show(ex3.Message, "SQLink Error");
+                return;
+            }
+
+            /*
+             
+                         try
+                        {
+                            cmd1.ExecuteNonQuery();
+                        }
+                        catch (Exception ex2)
+                        {
+                            MessageBox.Show(ex2.Message, "SQLink Error");
+                            SQL01.Close();
+                            return;
+                        };
+
+                try {
+                this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
+
+                //disp_data();
+            }
             catch(Exception)
             {
                 new System.ArgumentNullException();
             }
-            
+             */
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
