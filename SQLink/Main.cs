@@ -27,7 +27,7 @@ namespace SQLink
             SqlCommand cmdX = SQLCon.CreateCommand();
             SQLCon.Open();
             cmdX.CommandType = CommandType.Text;
-             cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";   //TODO BY PROCEDURE
+            cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";
             cmdX.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
@@ -69,13 +69,22 @@ namespace SQLink
                     SQL01.Open();
                     cmd1.CommandType = CommandType.Text;
                     cmd1.CommandText = " " + EnterTextBox.Text.Trim() + " ";
-                
-                    cmd1.ExecuteNonQuery(); // try na to dac z sys exception
+
+                        try
+                        {
+                            cmd1.ExecuteNonQuery();
+                        }
+                        catch (Exception ex2)
+                        {
+                            MessageBox.Show(ex2.Message);
+                            SQL01.Close();
+                            return;
+                        };
+
                     DataTable T1 = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd1);
                     da.Fill(T1);
                     MainViewGrid.DataSource = T1;
-                    //disp_data();
                     SQL01.Close();
 
                 }
