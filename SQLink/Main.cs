@@ -69,18 +69,16 @@ namespace SQLink
                     SQL01.Open();
                     cmd1.CommandType = CommandType.Text;
                     cmd1.CommandText = " " + EnterTextBox.Text.Trim() + " ";
-
                         try
                         {
                             cmd1.ExecuteNonQuery();
                         }
                         catch (Exception ex2)
                         {
-                            MessageBox.Show(ex2.Message);
+                            MessageBox.Show(ex2.Message, "SQLink Error");
                             SQL01.Close();
                             return;
                         };
-
                     DataTable T1 = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd1);
                     da.Fill(T1);
@@ -117,7 +115,7 @@ namespace SQLink
             try {
                 this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
 
-                disp_data();
+                //disp_data();
             }
             catch(Exception)
             {
