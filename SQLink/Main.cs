@@ -27,15 +27,21 @@ namespace SQLink
             SqlCommand cmdX = SQLCon.CreateCommand();
             SQLCon.Open();
             cmdX.CommandType = CommandType.Text;
-            //cmdX.CommandText = "Use " + Login.ActiveForm.srvnamebox.Text + " exec dbo.GeneralServerDBInfo";   //TODO BY PROCEDURE
              cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";   //TODO BY PROCEDURE
             cmdX.ExecuteNonQuery();
-            disp_data2();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmdX);
+            da.Fill(dt);
+            MainViewGrid.DataSource = dt;
             SQLCon.Close();
+            SQLCon.Close();
+
         }
 
         private void button2_Click(object sender, EventArgs e)  //connect to db guzik w main oknie
         {
+
             Login A1 = new Login();
             // uruchamia okno login
             A1.Show();
@@ -62,7 +68,9 @@ namespace SQLink
                     SQLCon.Open();
                     cmdZ.CommandType = CommandType.Text;
                     cmdZ.CommandText = " " + EnterTextBox.Text.Trim() + " ";
-                    cmdZ.ExecuteNonQuery();
+
+                    cmdZ.ExecuteNonQuery(); // try na to dac z sys exception
+
                     disp_data();
                     SQLCon.Close();
                 }
@@ -78,14 +86,14 @@ namespace SQLink
             cmdX.CommandType = CommandType.Text;
             cmdX.CommandText = "select @@version;";
             cmdX.ExecuteNonQuery();
-            disp_data2();
+          //  disp_data2();
             SQLCon.Close();
         }
 
 
         public void disp_data()
         {
-            Login wf = new Login(this);
+            //Login wf = new Login(this);
 
 
             SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");  // na sztywno wklepane
@@ -93,21 +101,6 @@ namespace SQLink
             SqlCommand cmdX = SQLCon.CreateCommand();
             cmdX.CommandType = CommandType.Text;
             cmdX.CommandText = " " + EnterTextBox.Text.Trim() + " ";
-            cmdX.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmdX);
-            da.Fill(dt);
-            MainViewGrid.DataSource = dt;
-            SQLCon.Close();
-        }
-
-        public void disp_data2()
-        {
-            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");  //TODO linknąć dane z okien (serwer, baza danych, port)
-            SQLCon.Open();
-            SqlCommand cmdX = SQLCon.CreateCommand();
-            cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo";  //TODO BY PROCEDURE powielone z linia 22
             cmdX.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmdX);

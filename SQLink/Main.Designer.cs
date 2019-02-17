@@ -65,9 +65,10 @@
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(372, 263);
+            this.button1.Location = new System.Drawing.Point(496, 324);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 23);
+            this.button1.Size = new System.Drawing.Size(134, 27);
             this.button1.TabIndex = 3;
             this.button1.Text = "Check disk per DB";
             this.button1.UseVisualStyleBackColor = false;
@@ -78,11 +79,12 @@
             this.button2.AutoSize = true;
             this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.Location = new System.Drawing.Point(11, 11);
+            this.button2.Location = new System.Drawing.Point(15, 14);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 23);
+            this.button2.Size = new System.Drawing.Size(86, 27);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Connect";
+            this.button2.Text = "Reconnect";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -98,10 +100,11 @@
             // 
             // EnterTextBox
             // 
-            this.EnterTextBox.Location = new System.Drawing.Point(11, 40);
+            this.EnterTextBox.Location = new System.Drawing.Point(15, 49);
+            this.EnterTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EnterTextBox.Multiline = true;
             this.EnterTextBox.Name = "EnterTextBox";
-            this.EnterTextBox.Size = new System.Drawing.Size(342, 75);
+            this.EnterTextBox.Size = new System.Drawing.Size(455, 91);
             this.EnterTextBox.TabIndex = 6;
             this.EnterTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -109,9 +112,10 @@
             // 
             this.GoBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.GoBtn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.GoBtn.Location = new System.Drawing.Point(360, 40);
+            this.GoBtn.Location = new System.Drawing.Point(480, 49);
+            this.GoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GoBtn.Name = "GoBtn";
-            this.GoBtn.Size = new System.Drawing.Size(73, 46);
+            this.GoBtn.Size = new System.Drawing.Size(97, 57);
             this.GoBtn.TabIndex = 7;
             this.GoBtn.Text = "Execute";
             this.GoBtn.UseVisualStyleBackColor = false;
@@ -121,9 +125,10 @@
             // 
             this.Poligon.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Poligon.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Poligon.Location = new System.Drawing.Point(359, 92);
+            this.Poligon.Location = new System.Drawing.Point(479, 113);
+            this.Poligon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Poligon.Name = "Poligon";
-            this.Poligon.Size = new System.Drawing.Size(129, 23);
+            this.Poligon.Size = new System.Drawing.Size(172, 28);
             this.Poligon.TabIndex = 8;
             this.Poligon.Text = "Poligon Testowy";
             this.Poligon.UseVisualStyleBackColor = false;
@@ -144,17 +149,19 @@
             this.MainViewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.MainViewGrid.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.MainViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MainViewGrid.Location = new System.Drawing.Point(12, 144);
+            this.MainViewGrid.Location = new System.Drawing.Point(16, 177);
+            this.MainViewGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainViewGrid.Name = "MainViewGrid";
-            this.MainViewGrid.Size = new System.Drawing.Size(342, 217);
+            this.MainViewGrid.Size = new System.Drawing.Size(456, 267);
             this.MainViewGrid.TabIndex = 5;
             this.MainViewGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(491, 179);
+            this.textBox2.Location = new System.Drawing.Point(655, 220);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 20);
+            this.textBox2.Size = new System.Drawing.Size(133, 22);
             this.textBox2.TabIndex = 13;
             this.textBox2.Text = "Database";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -164,9 +171,10 @@
             this.button4.AutoSize = true;
             this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(372, 176);
+            this.button4.Location = new System.Drawing.Point(496, 217);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
+            this.button4.Size = new System.Drawing.Size(129, 27);
             this.button4.TabIndex = 14;
             this.button4.Text = "Free Space in DB";
             this.button4.UseVisualStyleBackColor = false;
@@ -176,18 +184,20 @@
             this.button5.AutoSize = true;
             this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.Location = new System.Drawing.Point(490, 141);
+            this.button5.Location = new System.Drawing.Point(653, 174);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(99, 23);
+            this.button5.Size = new System.Drawing.Size(128, 27);
             this.button5.TabIndex = 15;
             this.button5.Text = "Free Space in file";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(490, 206);
+            this.textBox3.Location = new System.Drawing.Point(653, 254);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(101, 20);
+            this.textBox3.Size = new System.Drawing.Size(133, 22);
             this.textBox3.TabIndex = 16;
             this.textBox3.Text = "File name";
             // 
@@ -196,9 +206,10 @@
             this.Active_connection.AutoSize = true;
             this.Active_connection.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Active_connection.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Active_connection.Location = new System.Drawing.Point(372, 234);
+            this.Active_connection.Location = new System.Drawing.Point(496, 288);
+            this.Active_connection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Active_connection.Name = "Active_connection";
-            this.Active_connection.Size = new System.Drawing.Size(109, 23);
+            this.Active_connection.Size = new System.Drawing.Size(138, 27);
             this.Active_connection.TabIndex = 18;
             this.Active_connection.Text = "Active Connections";
             this.Active_connection.UseVisualStyleBackColor = false;
@@ -206,9 +217,10 @@
             // 
             // IDbox
             // 
-            this.IDbox.Location = new System.Drawing.Point(530, 238);
+            this.IDbox.Location = new System.Drawing.Point(707, 293);
+            this.IDbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.IDbox.Name = "IDbox";
-            this.IDbox.Size = new System.Drawing.Size(28, 20);
+            this.IDbox.Size = new System.Drawing.Size(36, 22);
             this.IDbox.TabIndex = 19;
             this.IDbox.Text = "ID";
             this.IDbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
@@ -218,9 +230,10 @@
             this.Kill_session_button.AutoSize = true;
             this.Kill_session_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Kill_session_button.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Kill_session_button.Location = new System.Drawing.Point(492, 236);
+            this.Kill_session_button.Location = new System.Drawing.Point(656, 290);
+            this.Kill_session_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Kill_session_button.Name = "Kill_session_button";
-            this.Kill_session_button.Size = new System.Drawing.Size(30, 23);
+            this.Kill_session_button.Size = new System.Drawing.Size(36, 27);
             this.Kill_session_button.TabIndex = 20;
             this.Kill_session_button.Text = "Kill";
             this.Kill_session_button.UseVisualStyleBackColor = false;
@@ -230,9 +243,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(390, 144);
+            this.label1.Location = new System.Drawing.Point(520, 177);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 19);
+            this.label1.Size = new System.Drawing.Size(64, 24);
             this.label1.TabIndex = 21;
             this.label1.Text = "CHECK";
             // 
@@ -242,9 +256,10 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(584, 12);
+            this.button3.Location = new System.Drawing.Point(779, 15);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 24);
+            this.button3.Size = new System.Drawing.Size(33, 30);
             this.button3.TabIndex = 22;
             this.button3.UseMnemonic = false;
             this.button3.UseVisualStyleBackColor = false;
@@ -253,10 +268,10 @@
             // Version
             // 
             this.Version.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Version.Location = new System.Drawing.Point(372, 201);
-            this.Version.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Version.Location = new System.Drawing.Point(496, 247);
+            this.Version.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(96, 28);
+            this.Version.Size = new System.Drawing.Size(128, 34);
             this.Version.TabIndex = 23;
             this.Version.Text = "SQL Version";
             this.Version.UseVisualStyleBackColor = false;
@@ -265,10 +280,10 @@
             // ActiveS
             // 
             this.ActiveS.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ActiveS.Location = new System.Drawing.Point(483, 261);
-            this.ActiveS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ActiveS.Location = new System.Drawing.Point(644, 321);
+            this.ActiveS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ActiveS.Name = "ActiveS";
-            this.ActiveS.Size = new System.Drawing.Size(96, 27);
+            this.ActiveS.Size = new System.Drawing.Size(128, 33);
             this.ActiveS.TabIndex = 24;
             this.ActiveS.Text = "Active Sessions";
             this.ActiveS.UseVisualStyleBackColor = false;
@@ -277,10 +292,10 @@
             // LastBackup
             // 
             this.LastBackup.BackColor = System.Drawing.SystemColors.Highlight;
-            this.LastBackup.Location = new System.Drawing.Point(372, 291);
-            this.LastBackup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LastBackup.Location = new System.Drawing.Point(496, 358);
+            this.LastBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LastBackup.Name = "LastBackup";
-            this.LastBackup.Size = new System.Drawing.Size(100, 25);
+            this.LastBackup.Size = new System.Drawing.Size(133, 31);
             this.LastBackup.TabIndex = 25;
             this.LastBackup.Text = "Last Backup";
             this.LastBackup.UseVisualStyleBackColor = false;
@@ -289,9 +304,10 @@
             // LogSpace
             // 
             this.LogSpace.BackColor = System.Drawing.SystemColors.Highlight;
-            this.LogSpace.Location = new System.Drawing.Point(477, 291);
+            this.LogSpace.Location = new System.Drawing.Point(636, 358);
+            this.LogSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LogSpace.Name = "LogSpace";
-            this.LogSpace.Size = new System.Drawing.Size(75, 25);
+            this.LogSpace.Size = new System.Drawing.Size(100, 31);
             this.LogSpace.TabIndex = 26;
             this.LogSpace.Text = "Log space";
             this.LogSpace.UseVisualStyleBackColor = false;
@@ -299,10 +315,10 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(637, 372);
+            this.ClientSize = new System.Drawing.Size(849, 458);
             this.Controls.Add(this.LogSpace);
             this.Controls.Add(this.LastBackup);
             this.Controls.Add(this.ActiveS);
@@ -322,6 +338,7 @@
             this.Controls.Add(this.MainViewGrid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
