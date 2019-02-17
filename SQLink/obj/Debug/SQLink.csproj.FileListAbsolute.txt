@@ -1,0 +1,12 @@
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csprojAssemblyReference.cache
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.greatJob.resources
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.Login.resources
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.Main.resources
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.Properties.Resources.resources
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csproj.GenerateResource.cache
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csproj.CoreCompileInputs.cache
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\bin\Debug\SQLink.exe.config
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\bin\Debug\SQLink.exe
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\bin\Debug\SQLink.pdb
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.exe
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.pdb

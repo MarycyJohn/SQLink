@@ -22,7 +22,8 @@ namespace SQLink
         //SqlConnection WinAuth = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
         private void button2_Click(object sender, EventArgs e)  //łączenie z bazą danych przy użyciu wprowadzonych danych (sa we bazie w tabeli)
         {
-            
+
+
            DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
            using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
 
@@ -38,7 +39,7 @@ namespace SQLink
                     return;
                     };
 
-
+            //
             //to ponizej potencjalnie zbedne
             //SqlConnection LogMEin = new SqlConnection(DbConnection.ConnectionString);
             //string query = "Select * from SQLogin where username = '" + IDtextBox.Text.Trim() + "' and password = '" + PasstextBox.Text.Trim() + "'";
@@ -57,6 +58,19 @@ namespace SQLink
             Main C1 = new Main();
             C1.Show();
         }
+        
+        
+        //transfer adresu serwera miedzy formami
+        Main originalForm;
+        public Login(Main incomingForm)
+        {
+            originalForm = incomingForm;
+            InitializeComponent();
+        }
+        //transfer adresu serwera miedzy formami
+
+
+
 
         private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na ID
         {

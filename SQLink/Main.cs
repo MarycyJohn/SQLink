@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml.Linq;
+using System.Configuration;
 
 namespace SQLink
 {
     public partial class Main : Form
     {
+        public string text;
         public Main()
         {
             InitializeComponent();
@@ -25,7 +27,8 @@ namespace SQLink
             SqlCommand cmdX = SQLCon.CreateCommand();
             SQLCon.Open();
             cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = "Use SQLinkDB exec dbo.GeneralServerDBInfo";   //TODO BY PROCEDURE
+            //cmdX.CommandText = "Use " + Login.ActiveForm.srvnamebox.Text + " exec dbo.GeneralServerDBInfo";   //TODO BY PROCEDURE
+             cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";   //TODO BY PROCEDURE
             cmdX.ExecuteNonQuery();
             disp_data2();
             SQLCon.Close();
@@ -79,9 +82,13 @@ namespace SQLink
             SQLCon.Close();
         }
 
+
         public void disp_data()
         {
-            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
+            Login wf = new Login(this);
+
+
+            SqlConnection SQLCon = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");  // na sztywno wklepane
             SQLCon.Open();
             SqlCommand cmdX = SQLCon.CreateCommand();
             cmdX.CommandType = CommandType.Text;
@@ -136,8 +143,16 @@ namespace SQLink
                 {
                     SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
                     SqlCommand cmdX = conVer.CreateCommand(); // new SqlCommand();
-                //totaj try catch (hasło sql wygasło)
-                conVer.Open();
+                                                              //totaj try catch (hasło sql wygasło)
+                try
+                {
+                    conVer.Open();
+                }
+                catch (Exception)
+                {
+                    new System.ArgumentNullException();
+                }
+
                     cmdX.CommandType = CommandType.Text;
                     cmdX.CommandText = "select @@VERSION";
                 cmdX.ExecuteNonQuery();
