@@ -113,7 +113,7 @@ namespace SQLink
 
         private void Main_Load(object sender, EventArgs e)   //pierwsze łączenie z bazą, domyślnie lokalnie
         {
-           try {
+          /* try {
                 this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
 
                 //disp_data();
@@ -122,7 +122,7 @@ namespace SQLink
             {
                 MessageBox.Show(ex3.Message, "SQLink Info");
                 return; 
-            }
+            } */
 
             /*
 
