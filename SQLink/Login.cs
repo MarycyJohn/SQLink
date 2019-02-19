@@ -40,12 +40,21 @@ namespace SQLink
             this.Hide();
 
             try   //sprawdza czy jest otwarte okno main, jak jest to je zamyka
-            {
+            {                
 
-            if (Application.OpenForms.OfType<Main>().Count() == 1)
-                Application.OpenForms.OfType<Main>().First().Close();
 
-            Main frm = new Main();
+                
+                     if (Application.OpenForms.OfType<Main>().Count() == 1)
+                     {
+                         Application.OpenForms.OfType<Main>().First().Close();
+                  //  conn.Close();
+                }
+
+                
+     
+
+                    
+                    Main frm = new Main();
             frm.Show();
 
 
