@@ -15,6 +15,7 @@ namespace SQLink
 {
     public partial class Main : Form
     {
+        private Login AD_check;  //do sprawdzania czy łączenie po AD jest zaznaczone
         public string text;
         public Main()
         {
@@ -93,7 +94,7 @@ namespace SQLink
         private void Poligon_Click(object sender, EventArgs e) //guzik do testow
 
         {
-            SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
+             SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
             SqlCommand cmdX = SQLCon.CreateCommand(); 
             SQLCon.Open();
             cmdX.CommandType = CommandType.Text;
@@ -113,25 +114,34 @@ namespace SQLink
 
         private void Main_Load(object sender, EventArgs e)   //pierwsze łączenie z bazą, domyślnie lokalnie
         {
-          /* try {
-                this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
-
-                //disp_data();
-            }
-            catch(Exception ex3)
-            {
-                MessageBox.Show(ex3.Message, "SQLink Info");
-                return; 
-            } */
-
             /*
-
-Było z    catch(Exception)
+           AD_check = new Login();
+            //AD_check.Show();
+            if (AD_check.checkBoxAD.Checked)
             {
-                new System.ArgumentNullException();
+                ((CheckBox)(AD_check.checkBoxAD)).Checked.ToString();
+                MessageBox.Show("po AD będzie", "SQLink Info");
+            }*/
+
+                /* try {
+                    this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
+
+                    //disp_data();
+                }
+                catch(Exception ex3)
+                {
+                    MessageBox.Show(ex3.Message, "SQLink Info");
+                    return; 
+                } */
+
+                /*
+
+    Było z    catch(Exception)
+                {
+                    new System.ArgumentNullException();
+                }
+                 */
             }
-             */
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -143,6 +153,15 @@ Było z    catch(Exception)
         private void Version_Click(object sender, EventArgs e)
         {
                 {
+                if (Login.Ad_true == true)
+                {
+                    MessageBox.Show("logujemy po AD", "SQLink Info"); 
+                }
+                else
+                {
+                    MessageBox.Show("logujemy po SQL", "SQLink Info");
+                };
+
 
                 SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
                 SqlCommand cmdX = conVer.CreateCommand();

@@ -13,6 +13,7 @@ namespace SQLink
 {
     public partial class Login : Form
     {
+        public static bool Ad_true = false;
         public Login()
         {
             InitializeComponent();
@@ -45,8 +46,8 @@ namespace SQLink
                 {
                  Application.OpenForms.OfType<Main>().First().Close();
                 }
-                 Main frm = new Main();
-                 frm.Show();
+                 Main run_main = new Main(); //odpala główne okno programu
+                 run_main.Show();
             }
             catch (Exception ex4)
             {
@@ -92,16 +93,20 @@ namespace SQLink
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)  //checkbox windows auth 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)  //checkbox windows auth było private nie public
         {
             if (checkBoxAD.Checked)
             {
-                //Połączenie ma być domenowe
+
+                Ad_true = true;
             }
-            else 
-            {
-                //Połączenie po SQL auth
-            }
+              /*((CheckBox)(checkBoxAD)).Checked.ToString();
+                  MessageBox.Show("po AD będzie", "SQLink Info");
+              }
+              else 
+              {
+                  //Połączenie po SQL auth
+              }*/
         }
 
         private void Login_Load(object sender, EventArgs e)  //okno login ogólne 
