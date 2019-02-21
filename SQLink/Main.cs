@@ -46,6 +46,7 @@ namespace SQLink
             Login new_run_login = new Login();
             // uruchamia okno login
             new_run_login.Show();
+            this.Close();
             //Application.OpenForms.OfType<Login>().First().Close();
             //DODAĆ ZAMYKANIE OBECNYCH POŁĄCZEŃ, RESET CONNECTIONS TO SQL
 
@@ -102,7 +103,7 @@ namespace SQLink
             cmdX.CommandText = "select @@version;";
             cmdX.ExecuteNonQuery();
           //  disp_data2();
-          //  SQLCon.Close();
+            SQLCon.Close();
         }
 
        

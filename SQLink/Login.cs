@@ -47,22 +47,22 @@ namespace SQLink
             DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
             using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
                                                                                           //  bool conn = (connection.State == ConnectionState.Open);
-                    try
+                try
                 {
 
-                 /*   if (Login.connect_again == true)
-                    {
-                        conn.Close();
-                        conn.Dispose();
-                        Login.connect_again = false;
-                        return;
-                    }
-                    else
-                    {
-                        conn.Open();
-                        Login.connect_again = false;
-                    }
-                    */
+                    /*   if (Login.connect_again == true)
+                       {
+                           conn.Close();
+                           conn.Dispose();
+                           Login.connect_again = false;
+                           return;
+                       }
+                       else
+                       {
+                           conn.Open();
+                           Login.connect_again = false;
+                       }
+                       */
                     conn.Open();
                 }
                 catch (Exception ex)
@@ -72,9 +72,15 @@ namespace SQLink
                     conn.Dispose();
                     DbConnection.isInitilized = false;
                     return;
-                };
-
-            MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
+                }
+                finally
+                {
+                    if (conn != null)
+                    {
+                        conn.Dispose();
+                    };
+                }
+                    MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
             //if number of conn <1, close first conn
 
             this.Hide();
