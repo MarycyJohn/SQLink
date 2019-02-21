@@ -13,7 +13,7 @@ namespace SQLink
 {
     public partial class Login : Form
     {
-        public static bool Ad_true = false;
+        public static bool AD_auth = false;
         public Login()
         {
             InitializeComponent();
@@ -98,7 +98,7 @@ namespace SQLink
             if (checkBoxAD.Checked)
             {
 
-                Ad_true = true;
+                AD_auth = true;
             }
               /*((CheckBox)(checkBoxAD)).Checked.ToString();
                   MessageBox.Show("po AD będzie", "SQLink Info");

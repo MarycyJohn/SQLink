@@ -20,7 +20,7 @@ namespace SQLink
             isInitilized = true;
             //=============================================================================================
 
-            if (Login.Ad_true == true)
+            if (Login.AD_auth == true)
                 {
                     MessageBox.Show("logujemy po AD", "SQLink Info");
                     connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
@@ -33,8 +33,7 @@ namespace SQLink
                 server, db, login, user);
             };
 
-            // powyzej sprawdza jaka jest wyrana autentykacja  
-//=============================================================================================           
+            // powyzej sprawdza jaka jest wyrana autentykacja        
 
 
                                 
