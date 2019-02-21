@@ -17,20 +17,26 @@ namespace SQLink
 
             if (isInitilized)
                 new Exception("Connection already initilized. Make sure you have only one point of initalization");
-          
-            
-            /*  if (checkBoxAD.Checked)
-            {
-                ((CheckBox)(checkBoxAD)).Checked.ToString();
-                MessageBox.Show("po AD będzie", "SQLink Info");
-            }
-            else
-            {
-                //Połączenie po SQL auth
-            }*/
             isInitilized = true;
-            connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
-                                server, db, login, user);
+            //=============================================================================================
+
+            if (Login.Ad_true == true)
+                {
+                    MessageBox.Show("logujemy po AD", "SQLink Info");
+                    connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
+                    server, db, login, user);
+            }
+                else
+                {
+                    MessageBox.Show("logujemy po SQL", "SQLink Info");
+                    connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
+                server, db, login, user);
+            };
+
+            // powyzej sprawdza jaka jest wyrana autentykacja  
+//=============================================================================================           
+
+
                                 
         }
 

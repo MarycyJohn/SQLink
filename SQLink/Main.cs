@@ -152,7 +152,9 @@ namespace SQLink
 
         private void Version_Click(object sender, EventArgs e)
         {
+            
                 {
+                /*
                 if (Login.Ad_true == true)
                 {
                     MessageBox.Show("logujemy po AD", "SQLink Info"); 
@@ -161,7 +163,7 @@ namespace SQLink
                 {
                     MessageBox.Show("logujemy po SQL", "SQLink Info");
                 };
-
+                */
 
                 SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
                 SqlCommand cmdX = conVer.CreateCommand();
