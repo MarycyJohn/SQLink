@@ -42,12 +42,13 @@ namespace SQLink
 
         private void button2_Click(object sender, EventArgs e)  //reconnect to db guzik w main oknie
         {
-
-            Login A1 = new Login();
-            // uruchamia okno login
-            A1.Show();
-            //DODAĆ ZAMYKANIE OBECNYCH POŁĄCZEŃ, RESET CONNECTIONS TO SQL
            
+            Login new_run_login = new Login();
+            // uruchamia okno login
+            new_run_login.Show();
+            //Application.OpenForms.OfType<Login>().First().Close();
+            //DODAĆ ZAMYKANIE OBECNYCH POŁĄCZEŃ, RESET CONNECTIONS TO SQL
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // glowne okno data grid

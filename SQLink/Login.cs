@@ -41,11 +41,17 @@ namespace SQLink
             this.Hide();
 
             try   //sprawdza czy jest otwarte okno main, jak jest to je zamyka
-            {                
+            {
                 if (Application.OpenForms.OfType<Main>().Count() == 1)
                 {
-                 Application.OpenForms.OfType<Main>().First().Close();
+                    Application.OpenForms.OfType<Main>().First().Close();
                 }
+                /*  if (Application.OpenForms.OfType<Login>().Count() == 1)
+                    {
+                        Application.OpenForms.OfType<Login>().First().Close();
+                        //  conn.Close();
+                    }*/
+                    
                  Main run_main = new Main(); //odpala główne okno programu
                  run_main.Show();
             }
@@ -99,6 +105,10 @@ namespace SQLink
             {
 
                 AD_auth = true;
+            }
+            else
+            {
+                AD_auth = false;
             }
               /*((CheckBox)(checkBoxAD)).Checked.ToString();
                   MessageBox.Show("po AD będzie", "SQLink Info");
