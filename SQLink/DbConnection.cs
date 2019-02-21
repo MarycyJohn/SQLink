@@ -23,10 +23,14 @@ namespace SQLink
             if (Login.AD_auth == true)
                 {
                     MessageBox.Show("logujemy po AD", "SQLink Info");
-                    connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
-                    server, db, login, user);
+                /* connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
+                 server, db, login, user);*/
+
+                connectionString = string.Format("Data Source={0};initial catalog={1};persist security info=True;Integrated Security=SSPI;",
+                    server, db);//, login, user);
+
             }
-                else
+            else
                 {
                     MessageBox.Show("logujemy po SQL", "SQLink Info");
                     connectionString = string.Format("Data Source={0};Database={1};User Id={2};Password={3}",
