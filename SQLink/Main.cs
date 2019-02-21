@@ -36,13 +36,13 @@ namespace SQLink
             da.Fill(dt);
             MainViewGrid.DataSource = dt;
             SQLCon.Close();
-            SQLCon.Close();
+          //  SQLCon.Close();
 
         }
 
         private void button2_Click(object sender, EventArgs e)  //reconnect to db guzik w main oknie
         {
-           
+           // Login.connect_again = true;
             Login new_run_login = new Login();
             // uruchamia okno login
             new_run_login.Show();
@@ -102,7 +102,7 @@ namespace SQLink
             cmdX.CommandText = "select @@version;";
             cmdX.ExecuteNonQuery();
           //  disp_data2();
-            SQLCon.Close();
+          //  SQLCon.Close();
         }
 
        

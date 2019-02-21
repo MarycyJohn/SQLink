@@ -14,6 +14,9 @@ namespace SQLink
     public partial class Login : Form
     {
         public static bool AD_auth = false;
+       // public static bool connect_again = false;
+
+        // public override void conn.Close();
         public Login()
         {
             InitializeComponent();
@@ -23,22 +26,60 @@ namespace SQLink
         //SqlConnection WinAuth = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
         private void button2_Click(object sender, EventArgs e)  //łączenie z bazą danych przy użyciu wprowadzonych danych (sa we bazie w tabeli)
         {
+
+
+            //zmienna aktyv_login= true
+            //if aktiv_login=1
+            //conn.closez
+
+            //zmienna connect_again = true, w guziku reconnect (1 to false 0 to true)
+            //tuaj jeśli zmienna connect_again = true to conn.close else conn open, connect_again = false
+
+            /*
+             
+             
+             
+             
+             */
+
+
+          //  conn.Close();
             DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
             using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
-            try
-            {
-                conn.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "SQLink info");
-                conn.Close();
-                DbConnection.isInitilized = false;
-                return;
-            };
+                                                                                          //  bool conn = (connection.State == ConnectionState.Open);
+                    try
+                {
+
+                 /*   if (Login.connect_again == true)
+                    {
+                        conn.Close();
+                        conn.Dispose();
+                        Login.connect_again = false;
+                        return;
+                    }
+                    else
+                    {
+                        conn.Open();
+                        Login.connect_again = false;
+                    }
+                    */
+                    conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "SQLink info");
+                    conn.Close();
+                    conn.Dispose();
+                    DbConnection.isInitilized = false;
+                    return;
+                };
 
             MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
+            //if number of conn <1, close first conn
+
             this.Hide();
+
+
 
             try   //sprawdza czy jest otwarte okno main, jak jest to je zamyka
             {
