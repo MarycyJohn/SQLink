@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.sQLinkDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -45,7 +46,6 @@
             this.Active_connection = new System.Windows.Forms.Button();
             this.IDbox = new System.Windows.Forms.TextBox();
             this.Kill_session_button = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.Version = new System.Windows.Forms.Button();
             this.ActiveS = new System.Windows.Forms.Button();
             this.LastBackup = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@
             this.sidepanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.sQLinkDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sQLinkDBDataSet)).BeginInit();
@@ -84,14 +85,14 @@
             // 
             // button2
             // 
-            this.button2.AutoSize = true;
             this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.BackColor = System.Drawing.Color.LightGray;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(617, 8);
+            this.button2.Location = new System.Drawing.Point(601, 8);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 29);
+            this.button2.Size = new System.Drawing.Size(111, 43);
             this.button2.TabIndex = 4;
             this.button2.Text = "Reconnect";
             this.button2.UseVisualStyleBackColor = false;
@@ -262,23 +263,6 @@
             this.Kill_session_button.UseVisualStyleBackColor = false;
             this.Kill_session_button.Click += new System.EventHandler(this.Kill_session_button_Click);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.LightGray;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(721, 7);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(53, 30);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Exit";
-            this.button3.UseMnemonic = false;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // Version
             // 
             this.Version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
@@ -392,6 +376,23 @@
             this.panel2.Size = new System.Drawing.Size(182, 77);
             this.panel2.TabIndex = 0;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightGray;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Image = global::SQLink.Properties.Resources.exit;
+            this.button3.Location = new System.Drawing.Point(720, 7);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 43);
+            this.button3.TabIndex = 22;
+            this.button3.UseMnemonic = false;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SQLink.Properties.Resources.sqlink_kopia;
@@ -413,6 +414,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidepanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

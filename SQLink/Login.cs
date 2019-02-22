@@ -176,7 +176,7 @@ namespace SQLink
 
         }
 
-        private void ADConnButton_Click(object sender, EventArgs e)
+        private void ADConnButton_Click(object sender, EventArgs e)  //to ponizej do wywalenia
         {
             ADConnection.ADInitlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
             using (SqlConnection connAD = new SqlConnection(ADConnection.ADConnectionString)) //testuje czy działa połączenie
@@ -197,6 +197,12 @@ namespace SQLink
             Main C2 = new Main();
             C2.Show();
 
+        }
+
+        private void exit_login_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Environment.Exit(0);
         }
     }
 }
