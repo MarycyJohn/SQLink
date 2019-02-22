@@ -13,9 +13,18 @@ using System.Configuration;
 
 namespace SQLink
 {
-    public partial class Main : Form
+
+
+
+public partial class Main : Form
     {
-        private Login AD_check;  //do sprawdzania czy łączenie po AD jest zaznaczone
+
+
+
+
+        //po zalogowaniu AD nie można się zalogować po SQL 
+       // private Login AD_check;  //do sprawdzania czy łączenie po AD jest zaznaczone
+        private Login AD_auth;
         public string text;
         public Main()
         {
@@ -101,6 +110,8 @@ namespace SQLink
             SQLCon.Open();
             cmdX.CommandType = CommandType.Text;
             cmdX.CommandText = "select @@version;";
+
+
             cmdX.ExecuteNonQuery();
           //  disp_data2();
             SQLCon.Close();
