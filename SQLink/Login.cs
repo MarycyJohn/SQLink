@@ -204,6 +204,98 @@ namespace SQLink
             this.Close();
             Environment.Exit(0);
         }
+
+        private void portnamebox_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void portnamebox_Click(object sender, EventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= portnamebox_TextChanged;
+        }
+
+        private void srvnamebox_Enter(object sender, EventArgs e)
+        {
+            if (srvnamebox.Text == "SQL Server name")
+            {
+                srvnamebox.Text = "";
+                srvnamebox.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void srvnamebox_Leave(object sender, EventArgs e)
+        {
+            if (srvnamebox.Text == "")
+            {
+                srvnamebox.Text = "SQL Server name";
+                srvnamebox.ForeColor = Color.Silver;
+
+            }
+        }
+
+        private void PasstextBox_Enter(object sender, EventArgs e)
+        {
+            if (PasstextBox.Text == "Password")
+            {
+                PasstextBox.Text = "";
+                PasstextBox.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void PasstextBox_Leave(object sender, EventArgs e)
+        {
+            if (PasstextBox.Text == "")
+            {
+                PasstextBox.Text = "Password";
+                PasstextBox.ForeColor = Color.Silver;
+
+            }
+        }
+
+        private void IDtextBox_Enter(object sender, EventArgs e)
+        {
+            if (IDtextBox.Text == "SQL Login")
+            {
+                IDtextBox.Text = "";
+                IDtextBox.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void IDtextBox_Leave(object sender, EventArgs e)
+        {
+            if (IDtextBox.Text == "")
+            {
+                IDtextBox.Text = "SQL Login";
+                IDtextBox.ForeColor = Color.Silver;
+
+            }
+        }
+
+        private void dbnamebox_Enter(object sender, EventArgs e)
+        {
+            
+            if (dbnamebox.Text == "DB name")
+            {
+                dbnamebox.Text = "";
+                dbnamebox.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void dbnamebox_Leave(object sender, EventArgs e)
+        {
+            if (dbnamebox.Text == "")
+            {
+                dbnamebox.Text = "DB name";
+                dbnamebox.ForeColor = Color.Silver;
+
+            }
+        }
     }
 }
 

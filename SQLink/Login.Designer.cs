@@ -32,79 +32,65 @@
             this.ConnectDBbtn = new System.Windows.Forms.Button();
             this.IDtextBox = new System.Windows.Forms.TextBox();
             this.PasstextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.checkBoxAD = new System.Windows.Forms.CheckBox();
             this.srvnamebox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.portnamebox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.dbnamebox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.exit_login_button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ConnectDBbtn
             // 
-            this.ConnectDBbtn.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ConnectDBbtn.Location = new System.Drawing.Point(249, 144);
+            this.ConnectDBbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.ConnectDBbtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ConnectDBbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConnectDBbtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ConnectDBbtn.ForeColor = System.Drawing.Color.LightGray;
+            this.ConnectDBbtn.Location = new System.Drawing.Point(0, 192);
             this.ConnectDBbtn.Name = "ConnectDBbtn";
-            this.ConnectDBbtn.Size = new System.Drawing.Size(75, 23);
+            this.ConnectDBbtn.Size = new System.Drawing.Size(345, 70);
             this.ConnectDBbtn.TabIndex = 0;
             this.ConnectDBbtn.Text = "Connect";
-            this.ConnectDBbtn.UseVisualStyleBackColor = true;
+            this.ConnectDBbtn.UseVisualStyleBackColor = false;
             this.ConnectDBbtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // IDtextBox
             // 
-            this.IDtextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.IDtextBox.Location = new System.Drawing.Point(79, 99);
+            this.IDtextBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.IDtextBox.ForeColor = System.Drawing.Color.Silver;
+            this.IDtextBox.Location = new System.Drawing.Point(12, 118);
             this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(164, 30);
+            this.IDtextBox.Size = new System.Drawing.Size(164, 23);
             this.IDtextBox.TabIndex = 3;
-            this.IDtextBox.Text = "ink";
+            this.IDtextBox.Text = "SQL Login";
             this.IDtextBox.TextChanged += new System.EventHandler(this.IDtextBox_TextChanged);
+            this.IDtextBox.Enter += new System.EventHandler(this.IDtextBox_Enter);
+            this.IDtextBox.Leave += new System.EventHandler(this.IDtextBox_Leave);
             // 
             // PasstextBox
             // 
-            this.PasstextBox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PasstextBox.Location = new System.Drawing.Point(79, 141);
+            this.PasstextBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PasstextBox.ForeColor = System.Drawing.Color.Silver;
+            this.PasstextBox.Location = new System.Drawing.Point(12, 147);
             this.PasstextBox.Name = "PasstextBox";
             this.PasstextBox.PasswordChar = '*';
-            this.PasstextBox.Size = new System.Drawing.Size(164, 30);
+            this.PasstextBox.Size = new System.Drawing.Size(164, 23);
             this.PasstextBox.TabIndex = 4;
             this.PasstextBox.Text = "P@ssw0rd";
             this.PasstextBox.TextChanged += new System.EventHandler(this.PasstextBox_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(55, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 23);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "ID";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(6, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 23);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.PasstextBox.Enter += new System.EventHandler(this.PasstextBox_Enter);
+            this.PasstextBox.Leave += new System.EventHandler(this.PasstextBox_Leave);
             // 
             // checkBoxAD
             // 
             this.checkBoxAD.AutoSize = true;
-            this.checkBoxAD.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxAD.Location = new System.Drawing.Point(246, 89);
+            this.checkBoxAD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxAD.Location = new System.Drawing.Point(182, 138);
             this.checkBoxAD.Name = "checkBoxAD";
-            this.checkBoxAD.Size = new System.Drawing.Size(147, 50);
+            this.checkBoxAD.Size = new System.Drawing.Size(134, 42);
             this.checkBoxAD.TabIndex = 8;
             this.checkBoxAD.Text = "Windows \r\nAuthentication";
             this.checkBoxAD.UseVisualStyleBackColor = true;
@@ -112,89 +98,76 @@
             // 
             // srvnamebox
             // 
-            this.srvnamebox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.srvnamebox.Location = new System.Drawing.Point(79, 62);
+            this.srvnamebox.BackColor = System.Drawing.Color.White;
+            this.srvnamebox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.srvnamebox.ForeColor = System.Drawing.Color.Silver;
+            this.srvnamebox.Location = new System.Drawing.Point(12, 89);
             this.srvnamebox.Name = "srvnamebox";
-            this.srvnamebox.Size = new System.Drawing.Size(111, 30);
+            this.srvnamebox.Size = new System.Drawing.Size(120, 23);
             this.srvnamebox.TabIndex = 10;
-            this.srvnamebox.Text = "SRV-SQL5";
+            this.srvnamebox.Text = "SQL Server name";
             this.srvnamebox.TextChanged += new System.EventHandler(this.srvnamebox_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(36, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 23);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Server name /Address";
-            // 
-            // portnamebox
-            // 
-            this.portnamebox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.portnamebox.Location = new System.Drawing.Point(196, 62);
-            this.portnamebox.Name = "portnamebox";
-            this.portnamebox.Size = new System.Drawing.Size(47, 30);
-            this.portnamebox.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(194, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 23);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Port";
+            this.srvnamebox.Enter += new System.EventHandler(this.srvnamebox_Enter);
+            this.srvnamebox.Leave += new System.EventHandler(this.srvnamebox_Leave);
             // 
             // dbnamebox
             // 
-            this.dbnamebox.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dbnamebox.Location = new System.Drawing.Point(249, 62);
+            this.dbnamebox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dbnamebox.ForeColor = System.Drawing.Color.Silver;
+            this.dbnamebox.Location = new System.Drawing.Point(138, 89);
             this.dbnamebox.Name = "dbnamebox";
-            this.dbnamebox.Size = new System.Drawing.Size(111, 30);
+            this.dbnamebox.Size = new System.Drawing.Size(111, 23);
             this.dbnamebox.TabIndex = 14;
-            this.dbnamebox.Text = "SQLinkDB";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(242, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 23);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "DB name";
+            this.dbnamebox.Text = "DB name";
+            this.dbnamebox.Enter += new System.EventHandler(this.dbnamebox_Enter);
+            this.dbnamebox.Leave += new System.EventHandler(this.dbnamebox_Leave);
             // 
             // exit_login_button
             // 
+            this.exit_login_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_login_button.Image = global::SQLink.Properties.Resources.exit;
-            this.exit_login_button.Location = new System.Drawing.Point(407, 12);
+            this.exit_login_button.Location = new System.Drawing.Point(172, 0);
             this.exit_login_button.Name = "exit_login_button";
-            this.exit_login_button.Size = new System.Drawing.Size(44, 41);
+            this.exit_login_button.Size = new System.Drawing.Size(172, 70);
             this.exit_login_button.TabIndex = 17;
             this.exit_login_button.UseVisualStyleBackColor = true;
             this.exit_login_button.Click += new System.EventHandler(this.exit_login_button_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SQLink.Properties.Resources.sqlink_kopia;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.exit_login_button);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.LightGray;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(345, 73);
+            this.panel1.TabIndex = 19;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 233);
-            this.Controls.Add(this.exit_login_button);
-            this.Controls.Add(this.label5);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(345, 262);
             this.Controls.Add(this.dbnamebox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.portnamebox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.srvnamebox);
+            this.Controls.Add(this.ConnectDBbtn);
             this.Controls.Add(this.checkBoxAD);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.PasstextBox);
             this.Controls.Add(this.IDtextBox);
-            this.Controls.Add(this.ConnectDBbtn);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -202,6 +175,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SQLink";
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,16 +186,12 @@
         private System.Windows.Forms.Button ConnectDBbtn;
         private System.Windows.Forms.TextBox IDtextBox;
         private System.Windows.Forms.TextBox PasstextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox srvnamebox;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox portnamebox;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox dbnamebox;
-		private System.Windows.Forms.Label label5;
         public System.Windows.Forms.CheckBox checkBoxAD;
         private System.Windows.Forms.Button exit_login_button;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
