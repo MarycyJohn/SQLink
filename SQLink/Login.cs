@@ -16,7 +16,7 @@ namespace SQLink
         public static bool AD_auth = false;
        // public static bool connect_again = false;
 
-        // public override void conn.Close();
+         
         public Login()
         {
             InitializeComponent();
@@ -45,47 +45,60 @@ namespace SQLink
 
           //  conn.Close();
             DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
-            using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
+            SqlConnection main_connection = new SqlConnection(DbConnection.ConnectionString); //testuje czy działa połączenie
+            //using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
                                                                                           //  bool conn = (connection.State == ConnectionState.Open);
                 try
                 {
 
-                    /*   if (Login.connect_again == true)
-                       {
-                           conn.Close();
-                           conn.Dispose();
-                           Login.connect_again = false;
-                           return;
-                       }
-                       else
-                       {
-                           conn.Open();
-                           Login.connect_again = false;
-                       }
-                       */
-                    conn.Open();
+                /* 
+
+
+        SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
+        SqlCommand cmdX = SQLCon.CreateCommand();
+        SQLCon.Open();
+        cmdX.CommandType = CommandType.Text;
+        cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";
+        cmdX.ExecuteNonQuery();
+
+        DataTable dt = new DataTable();
+        SqlDataAdapter da = new SqlDataAdapter(cmdX);
+        da.Fill(dt);
+        MainViewGrid.DataSource = dt;
+        SQLCon.Close();
+
+                
+
+
+                 */
+                main_connection.Open();
+                SqlConnection.ClearPool(main_connection);
+               // conn.Close();
+               // conn.Dispose();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "SQLink info");
-                    conn.Close();
-                    conn.Dispose();
+                   // conn.Close();
+                   // conn.Dispose();
                     DbConnection.isInitilized = false;
                     return;
                 }
                 finally
                 {
-                   // if (conn != null)
-                    //{
-                     //   conn.Dispose();
-                    //};
-                }
-                    MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
+                
+              //  conn.Close();
+               // conn.Dispose();
+            }
+
+  
+
+            MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
             //if number of conn <1, close first conn
 
             this.Hide();
 
-
+            
 
             try   //sprawdza czy jest otwarte okno main, jak jest to je zamyka
             {
@@ -106,8 +119,9 @@ namespace SQLink
             {
                 MessageBox.Show(ex4.Message, "SQLink Info");
                 return;
+                
             };
-
+            
         }
         
         
@@ -198,7 +212,7 @@ namespace SQLink
             C2.Show();
 
         }*/
-
+        
         private void exit_login_button_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -51,11 +51,48 @@ public partial class Main : Form
 
         private void button2_Click(object sender, EventArgs e)  //reconnect to db guzik w main oknie
         {
+
+            //Login.run_login.Close();
+            //Login.ActiveForm.Dispose();
+
+
+          
+            try
+                        {
+
+                   //      if (Application.OpenForms.OfType<Login>().Count() == 1)
+                  //       {
+                    //greatJob backup = new greatJob();
+  
+                    Login new_run_login = new Login();
+                    new_run_login.Show();
+
+                   // Application.OpenForms.OfType<Login>().First().Close();
+                   // Application.OpenForms.OfType<greatJob>().First().Dispose();
+               // }
+
+                //         else
+               // {
+              //      Application.OpenForms.OfType<Login>().First().Dispose();
+               // }
+              //  Login.ActiveForm.Close();
+                        }
+                        catch (Exception close_login_ex)
+                        {
+                            MessageBox.Show(close_login_ex.Message, "SQLink Info");
+                            return;
+                        };
+
+           
             Login.AD_auth = false;
-            Login new_run_login = new Login();
+           // Login new_run_login = new Login();
             // uruchamia okno login
-            new_run_login.Show();
+            
+            this.Hide();
             this.Close();
+           
+            //SqlConnection.ClearAllPools;
+            //IF (DbConnection.isInitilized = conn
             //Application.OpenForms.OfType<Login>().First().Close();
             //DODAĆ ZAMYKANIE OBECNYCH POŁĄCZEŃ, RESET CONNECTIONS TO SQL
 
