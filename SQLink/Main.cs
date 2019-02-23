@@ -13,25 +13,16 @@ using System.Configuration;
 
 namespace SQLink
 {
-
-
-
-public partial class Main : Form
+    public partial class Main : Form
     {
-
-
-
-
-        //po zalogowaniu AD nie można się zalogować po SQL 
-       // private Login AD_check;  //do sprawdzania czy łączenie po AD jest zaznaczone
-      //  private Login AD_auth;
         public string text;
+
         public Main()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) //check db button
+        private void button1_Click(object sender, EventArgs e) //DBcheck button
         {
             SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
             SqlCommand cmdX = SQLCon.CreateCommand();
@@ -39,95 +30,43 @@ public partial class Main : Form
             cmdX.CommandType = CommandType.Text;
             cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";
             cmdX.ExecuteNonQuery();
-
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmdX);
             da.Fill(dt);
             MainViewGrid.DataSource = dt;
             SQLCon.Close();
-          //  SQLCon.Close();
-
         }
 
-        private void button2_Click(object sender, EventArgs e)  //reconnect to db guzik w main oknie
+        private void button2_Click(object sender, EventArgs e)  //Reconnect button
         {
-
-            //Login.run_login.Close();
-            //Login.ActiveForm.Dispose();
-
-           // Login.Visible = true;
-          
             try
-                        {
-
-                //      if (Application.OpenForms.OfType<Login>().Count() == 1)
-                //       {
-                //greatJob backup = new greatJob();
-                // Show();
-                MessageBox.Show("Incomming magic");
-                /*FormCollection Login = Application.OpenForms;
-                foreach (Form  Main in Login)
-                {
-                    Show();
-
-                };*/
-
-
+            {
                 Login t1 = new Login();
                 t1.Show();
+                Login.AD_auth = false;
                 this.Dispose(false);
-
-                MessageBox.Show("there it was");
-
-               // Login new_run_login = new Login();
-                //    new_run_login.Show();
-
-                   // Application.OpenForms.OfType<Login>().First().Close();
-                   // Application.OpenForms.OfType<greatJob>().First().Dispose();
-               // }
-
-                //         else
-               // {
-              //      Application.OpenForms.OfType<Login>().First().Dispose();
-               // }
-              //  Login.ActiveForm.Close();
-                        }
-                        catch (Exception close_login_ex)
-                        {
-                            MessageBox.Show(close_login_ex.Message, "SQLink Info");
-                            return;
-                        };
-
-           
-            Login.AD_auth = false;
-           // Login new_run_login = new Login();
-            // uruchamia okno login
-            
-          //  this.Hide();
-          //  this.Close();
-            //isInitilized = true;
-            //SqlConnection.ClearAllPools;
-            //IF (DbConnection.isInitilized = conn
-            //Application.OpenForms.OfType<Login>().First().Close();
-            //DODAĆ ZAMYKANIE OBECNYCH POŁĄCZEŃ, RESET CONNECTIONS TO SQL
-
+             }
+            catch (Exception close_login_ex)
+            {
+             MessageBox.Show(close_login_ex.Message, "SQLink Info");
+             return;
+             };
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // glowne okno data grid
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e) //enter textbox
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void GoBtn_Click(object sender, EventArgs e) //execure button
+        private void GoBtn_Click(object sender, EventArgs e) //Execute SQL command button
         {
             using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString))
             {
-
                 {
                     SqlConnection SQL01 = new SqlConnection(DbConnection.ConnectionString);
                     SqlCommand cmd1 = SQL01.CreateCommand(); 
@@ -149,27 +88,10 @@ public partial class Main : Form
                     da.Fill(T1);
                     MainViewGrid.DataSource = T1;
                     SQL01.Close();
-
                 }
             }
         }
 
-        private void Poligon_Click(object sender, EventArgs e) //guzik do testow
-
-        {
-             SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-            SqlCommand cmdX = SQLCon.CreateCommand(); 
-            SQLCon.Open();
-            cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = "select @@version;";
-
-
-            cmdX.ExecuteNonQuery();
-          //  disp_data2();
-            SQLCon.Close();
-        }
-
-       
        public void disp_data()  //wyświetlana na wstępnie pusta zawartość disp data by grid był czysty
         {
 
@@ -177,140 +99,103 @@ public partial class Main : Form
 
     
 
-        private void Main_Load(object sender, EventArgs e)   //pierwsze łączenie z bazą, domyślnie lokalnie
+        private void Main_Load(object sender, EventArgs e)   //Poprzednie łączenie z bazą, dublowało połączenia
         {
-            /*
-           AD_check = new Login();
-            //AD_check.Show();
-            if (AD_check.checkBoxAD.Checked)
-            {
-                ((CheckBox)(AD_check.checkBoxAD)).Checked.ToString();
-                MessageBox.Show("po AD będzie", "SQLink Info");
-            }*/
-
-                /* try {
+             /* try 
+                {
                     this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
 
-                    //disp_data();
-                }
-                catch(Exception ex3)
-                {
-                    MessageBox.Show(ex3.Message, "SQLink Info");
-                    return; 
-                } */
-
-                /*
-
-    Było z    catch(Exception)
+                    disp_data();
+                } 
+                catch(Exception)
                 {
                     new System.ArgumentNullException();
                 }
                  */
             }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Exit app button
         {
             this.Close();
             Environment.Exit(0);
-            //Application.Exit;
         }
 
         private void Version_Click(object sender, EventArgs e)
         {
-            
-                {
-                /*
-                if (Login.Ad_true == true)
-                {
-                    MessageBox.Show("logujemy po AD", "SQLink Info"); 
-                }
-                else
-                {
-                    MessageBox.Show("logujemy po SQL", "SQLink Info");
-                };
-                */
-
-                SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
-                SqlCommand cmdX = conVer.CreateCommand();
+            SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
+            SqlCommand cmdX = conVer.CreateCommand();
                 try
-                    {
-                    
-                    conVer.Open();
-                    }
-                    catch (Exception ex6)
-                    {
-                    MessageBox.Show(ex6.Message, "SQLink info");
-                    return;
-                    };
-
-                cmdX.CommandType = CommandType.Text;
-                cmdX.CommandText = "select @@VERSION";
-                cmdX.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmdX);
-                da.Fill(dt);
-                MainViewGrid.DataSource = dt;
-                conVer.Close();
+                {            
+                conVer.Open();
                 }
+                catch (Exception ex6)
+                {
+                MessageBox.Show(ex6.Message, "SQLink info");
+                return;
+                };
+                    cmdX.CommandType = CommandType.Text;
+                    cmdX.CommandText = "select @@VERSION";
+                    cmdX.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmdX);
+                    da.Fill(dt);
+                    MainViewGrid.DataSource = dt;
+                    conVer.Close();        
         }
 
-        private void Active_connection_Click(object sender, EventArgs e)
+        private void Active_connection_Click(object sender, EventArgs e) //active connections button
         {
             {
-                SqlConnection conAC = new SqlConnection(DbConnection.ConnectionString);
-                SqlCommand cmdX = conAC.CreateCommand(); // new SqlCommand();
-                conAC.Open();
-                cmdX.CommandType = CommandType.Text;
-                cmdX.CommandText = "SELECT DB_NAME(dbid) as DBName, COUNT(dbid) as NumberOfConnections, loginame as LoginName FROM sys.sysprocesses WHERE dbid > 0 GROUP BY dbid, loginame";
-                cmdX.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmdX);
-                da.Fill(dt);
-                MainViewGrid.DataSource = dt;
-                conAC.Close();
+                SqlConnection connection_actConn = new SqlConnection(DbConnection.ConnectionString);
+                SqlCommand cmd_actConn = connection_actConn.CreateCommand();
+                connection_actConn.Open();
+                cmd_actConn.CommandType = CommandType.Text;
+                cmd_actConn.CommandText = "SELECT DB_NAME(dbid) as DBName, COUNT(dbid) as NumberOfConnections, loginame as LoginName FROM sys.sysprocesses WHERE dbid > 0 GROUP BY dbid, loginame";
+                cmd_actConn.ExecuteNonQuery();
+                DataTable dt_actConnt = new DataTable();
+                SqlDataAdapter adapter_actConn = new SqlDataAdapter(cmd_actConn);
+                adapter_actConn.Fill(dt_actConnt);
+                MainViewGrid.DataSource = dt_actConnt;
+                connection_actConn.Close();
             }
         }
 
-        private void ActiveS_Click(object sender, EventArgs e)
+        private void ActiveS_Click(object sender, EventArgs e) //Active session Button
         {
             {
-                SqlConnection conAS = new SqlConnection(DbConnection.ConnectionString);
-                SqlCommand cmdX = conAS.CreateCommand(); // new SqlCommand();
-                conAS.Open();
-                cmdX.CommandType = CommandType.Text;
-                cmdX.CommandText = "SELECT conn.session_id, host_name, program_name, nt_domain, login_name, connect_time, last_request_end_time FROM sys.dm_exec_sessions AS sess JOIN sys.dm_exec_connections AS conn ON sess.session_id = conn.session_id;";
-                cmdX.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmdX);
-                da.Fill(dt);
-                MainViewGrid.DataSource = dt;
-                conAS.Close();
+                SqlConnection connection_actsession = new SqlConnection(DbConnection.ConnectionString);
+                SqlCommand cmd_actSession = connection_actsession.CreateCommand();
+                connection_actsession.Open();
+                cmd_actSession.CommandType = CommandType.Text;
+                cmd_actSession.CommandText = "SELECT conn.session_id, host_name, program_name, nt_domain, login_name, connect_time, last_request_end_time FROM sys.dm_exec_sessions AS sess JOIN sys.dm_exec_connections AS conn ON sess.session_id = conn.session_id;";
+                cmd_actSession.ExecuteNonQuery();
+                DataTable dt_actSession = new DataTable();
+                SqlDataAdapter adapter_actSession = new SqlDataAdapter(cmd_actSession);
+                adapter_actSession.Fill(dt_actSession);
+                MainViewGrid.DataSource = dt_actSession;
+                connection_actsession.Close();
             }
         }
 
-        private void Kill_session_button_Click(object sender, EventArgs e)
+        private void Kill_session_button_Click(object sender, EventArgs e) //Kill session button
         {
             {
-                SqlConnection conKill = new SqlConnection(DbConnection.ConnectionString);
-                SqlCommand cmdZ = conKill.CreateCommand(); // new SqlCommand();
-                conKill.Open();
-                cmdZ.CommandType = CommandType.Text;
-                cmdZ.CommandText = "kill " + IDbox.Text.Trim() + " ";
-               // cmdZ.ExecuteNonQuery();
-              
+                SqlConnection connection_kill = new SqlConnection(DbConnection.ConnectionString);
+                SqlCommand cmd_kill = connection_kill.CreateCommand();
+                connection_kill.Open();
+                cmd_kill.CommandType = CommandType.Text;
+                cmd_kill.CommandText = "kill " + IDbox.Text.Trim() + " ";              
                  try
                     {
-                    cmdZ.ExecuteNonQuery();
+                    cmd_kill.ExecuteNonQuery();
                     }
-                    catch (Exception ex5)
+                    catch (Exception kill_button_exception)
                     {
-                    MessageBox.Show("Type Session ID number to close it." + "\n" + ex5.Message, "SQLink info");
+                    MessageBox.Show("Type Session ID number to close it." + "\n" + kill_button_exception.Message, "SQLink info");
                     return;
                     };
-
-                //disp_data();
-                conKill.Close();
-                MessageBox.Show("Session " + IDbox.Text.Trim() + " has been killed", "Session info");
+                        connection_kill.Close();
+                        MessageBox.Show("Session " + IDbox.Text.Trim() + " has been killed", "Session info");
             }
         }
 
@@ -319,39 +204,38 @@ public partial class Main : Form
 
         }
 
-        private void LastBackup_Click(object sender, EventArgs e)
+        private void LastBackup_Click(object sender, EventArgs e) //Backup check button
         {
 
             {
-                SqlConnection conLB = new SqlConnection(DbConnection.ConnectionString);
-                SqlCommand cmdX = conLB.CreateCommand(); // new SqlCommand();
-                conLB.Open();
-                cmdX.CommandType = CommandType.Text;
-                cmdX.CommandText = "SELECT msdb.dbo.backupset.database_name,  MAX(msdb.dbo.backupset.backup_finish_date) AS last_db_backup_date FROM   msdb.dbo.backupmediafamily  INNER JOIN msdb.dbo.backupset ON msdb.dbo.backupmediafamily.media_set_id = msdb.dbo.backupset.media_set_id  WHERE  msdb..backupset.type = 'D' GROUP BY msdb.dbo.backupset.database_name  ORDER BY  msdb.dbo.backupset.database_name";
-                cmdX.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmdX);
-                da.Fill(dt);
-                MainViewGrid.DataSource = dt;
-                conLB.Close();
-            }
-            
+                SqlConnection connection_backup = new SqlConnection(DbConnection.ConnectionString);
+                SqlCommand cmd_backup = connection_backup.CreateCommand();
+                connection_backup.Open();
+                cmd_backup.CommandType = CommandType.Text;
+                cmd_backup.CommandText = "SELECT msdb.dbo.backupset.database_name,  MAX(msdb.dbo.backupset.backup_finish_date) AS last_db_backup_date FROM   msdb.dbo.backupmediafamily  INNER JOIN msdb.dbo.backupset ON msdb.dbo.backupmediafamily.media_set_id = msdb.dbo.backupset.media_set_id  WHERE  msdb..backupset.type = 'D' GROUP BY msdb.dbo.backupset.database_name  ORDER BY  msdb.dbo.backupset.database_name";
+                cmd_backup.ExecuteNonQuery();
+                DataTable dt_backup = new DataTable();
+                SqlDataAdapter adapter_backup = new SqlDataAdapter(cmd_backup);
+                adapter_backup.Fill(dt_backup);
+                MainViewGrid.DataSource = dt_backup;
+                connection_backup.Close();
+            }   
         }
 
         private void LogSpace_Click(object sender, EventArgs e)
         {
             {
-                SqlConnection conLS = new SqlConnection(DbConnection.ConnectionString);
-                SqlCommand cmdX = conLS.CreateCommand(); // new SqlCommand();
-                conLS.Open();
-                cmdX.CommandType = CommandType.Text;
-                cmdX.CommandText = "DBCC SQLPERF(logspace)";
-                cmdX.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmdX);
-                da.Fill(dt);
-                MainViewGrid.DataSource = dt;
-                conLS.Close();
+                SqlConnection connection_logspace = new SqlConnection(DbConnection.ConnectionString);
+                SqlCommand cmd_logspace = connection_logspace.CreateCommand();
+                connection_logspace.Open();
+                cmd_logspace.CommandType = CommandType.Text;
+                cmd_logspace.CommandText = "DBCC SQLPERF(logspace)";
+                cmd_logspace.ExecuteNonQuery();
+                DataTable dt_logspace = new DataTable();
+                SqlDataAdapter adapter_logspace = new SqlDataAdapter(cmd_logspace);
+                adapter_logspace.Fill(dt_logspace);
+                MainViewGrid.DataSource = dt_logspace;
+                connection_logspace.Close();
             }
         }
 
