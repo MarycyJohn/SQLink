@@ -69,22 +69,7 @@ namespace SQLink
         {
 
         }
-        /*
-        private void label3_Click(object sender, EventArgs e)  //password label
-        {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e) //label ID
-        {
-
-        }
-      
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)  // checkbox zapamietaj login 
-        {
-
-        }
-          */
         private void checkBox1_CheckedChanged(object sender, EventArgs e)  //checkbox Windows Authentication
         {
             if (checkBoxAD.Checked)
@@ -98,7 +83,7 @@ namespace SQLink
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)  //okno login ogólne 
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
