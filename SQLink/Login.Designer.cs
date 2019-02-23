@@ -51,7 +51,7 @@
             this.ConnectDBbtn.ForeColor = System.Drawing.Color.LightGray;
             this.ConnectDBbtn.Location = new System.Drawing.Point(0, 192);
             this.ConnectDBbtn.Name = "ConnectDBbtn";
-            this.ConnectDBbtn.Size = new System.Drawing.Size(345, 70);
+            this.ConnectDBbtn.Size = new System.Drawing.Size(298, 70);
             this.ConnectDBbtn.TabIndex = 0;
             this.ConnectDBbtn.Text = "Connect";
             this.ConnectDBbtn.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             this.IDtextBox.ForeColor = System.Drawing.Color.Silver;
             this.IDtextBox.Location = new System.Drawing.Point(12, 118);
             this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(164, 23);
+            this.IDtextBox.Size = new System.Drawing.Size(164, 20);
             this.IDtextBox.TabIndex = 3;
             this.IDtextBox.Text = "SQL Login";
             this.IDtextBox.TextChanged += new System.EventHandler(this.IDtextBox_TextChanged);
@@ -77,7 +77,7 @@
             this.PasstextBox.Location = new System.Drawing.Point(12, 147);
             this.PasstextBox.Name = "PasstextBox";
             this.PasstextBox.PasswordChar = '*';
-            this.PasstextBox.Size = new System.Drawing.Size(164, 23);
+            this.PasstextBox.Size = new System.Drawing.Size(164, 20);
             this.PasstextBox.TabIndex = 4;
             this.PasstextBox.Text = "P@ssw0rd";
             this.PasstextBox.TextChanged += new System.EventHandler(this.PasstextBox_TextChanged);
@@ -90,7 +90,7 @@
             this.checkBoxAD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxAD.Location = new System.Drawing.Point(182, 138);
             this.checkBoxAD.Name = "checkBoxAD";
-            this.checkBoxAD.Size = new System.Drawing.Size(134, 42);
+            this.checkBoxAD.Size = new System.Drawing.Size(107, 36);
             this.checkBoxAD.TabIndex = 8;
             this.checkBoxAD.Text = "Windows \r\nAuthentication";
             this.checkBoxAD.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.srvnamebox.ForeColor = System.Drawing.Color.Silver;
             this.srvnamebox.Location = new System.Drawing.Point(12, 89);
             this.srvnamebox.Name = "srvnamebox";
-            this.srvnamebox.Size = new System.Drawing.Size(120, 23);
+            this.srvnamebox.Size = new System.Drawing.Size(120, 20);
             this.srvnamebox.TabIndex = 10;
             this.srvnamebox.Text = "SQL Server name";
             this.srvnamebox.TextChanged += new System.EventHandler(this.srvnamebox_TextChanged);
@@ -116,7 +116,7 @@
             this.dbnamebox.ForeColor = System.Drawing.Color.Silver;
             this.dbnamebox.Location = new System.Drawing.Point(138, 89);
             this.dbnamebox.Name = "dbnamebox";
-            this.dbnamebox.Size = new System.Drawing.Size(111, 23);
+            this.dbnamebox.Size = new System.Drawing.Size(111, 20);
             this.dbnamebox.TabIndex = 14;
             this.dbnamebox.Text = "DB name";
             this.dbnamebox.Enter += new System.EventHandler(this.dbnamebox_Enter);
@@ -128,7 +128,7 @@
             this.exit_login_button.Image = global::SQLink.Properties.Resources.exit;
             this.exit_login_button.Location = new System.Drawing.Point(172, 0);
             this.exit_login_button.Name = "exit_login_button";
-            this.exit_login_button.Size = new System.Drawing.Size(172, 70);
+            this.exit_login_button.Size = new System.Drawing.Size(126, 73);
             this.exit_login_button.TabIndex = 17;
             this.exit_login_button.UseVisualStyleBackColor = true;
             this.exit_login_button.Click += new System.EventHandler(this.exit_login_button_Click);
@@ -138,7 +138,7 @@
             this.pictureBox1.Image = global::SQLink.Properties.Resources.sqlink_kopia;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(172, 73);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -152,15 +152,15 @@
             this.panel1.ForeColor = System.Drawing.Color.LightGray;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 73);
+            this.panel1.Size = new System.Drawing.Size(298, 73);
             this.panel1.TabIndex = 19;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(345, 262);
+            this.ClientSize = new System.Drawing.Size(298, 262);
             this.Controls.Add(this.dbnamebox);
             this.Controls.Add(this.srvnamebox);
             this.Controls.Add(this.ConnectDBbtn);

@@ -75,10 +75,10 @@ namespace SQLink
                 }
                 finally
                 {
-                    if (conn != null)
-                    {
-                        conn.Dispose();
-                    };
+                   // if (conn != null)
+                    //{
+                     //   conn.Dispose();
+                    //};
                 }
                     MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
             //if number of conn <1, close first conn
@@ -175,7 +175,7 @@ namespace SQLink
         {
 
         }
-
+        /*
         private void ADConnButton_Click(object sender, EventArgs e)  //to ponizej do wywalenia
         {
             ADConnection.ADInitlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
@@ -197,7 +197,7 @@ namespace SQLink
             Main C2 = new Main();
             C2.Show();
 
-        }
+        }*/
 
         private void exit_login_button_Click(object sender, EventArgs e)
         {

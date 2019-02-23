@@ -24,7 +24,7 @@ public partial class Main : Form
 
         //po zalogowaniu AD nie można się zalogować po SQL 
        // private Login AD_check;  //do sprawdzania czy łączenie po AD jest zaznaczone
-        private Login AD_auth;
+      //  private Login AD_auth;
         public string text;
         public Main()
         {
@@ -51,7 +51,7 @@ public partial class Main : Form
 
         private void button2_Click(object sender, EventArgs e)  //reconnect to db guzik w main oknie
         {
-           // Login.connect_again = true;
+            Login.AD_auth = false;
             Login new_run_login = new Login();
             // uruchamia okno login
             new_run_login.Show();
