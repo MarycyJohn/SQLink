@@ -30,9 +30,9 @@ namespace SQLink
                 {
                     main_connection.Open();
                 }
-                catch (Exception ex)
+                catch (Exception first_connection_exception)
                 {
-                    MessageBox.Show(ex.Message, "SQLink info");
+                    MessageBox.Show(first_connection_exception.Message, "SQLink info");
                     DbConnection.isInitilized = false;
                     return;
                 }
@@ -51,9 +51,9 @@ namespace SQLink
                 run_main.Show();
                 this.Hide();
             }
-            catch (Exception ex4)
+            catch (Exception close_multi_main_exception)
             {
-                MessageBox.Show(ex4.Message, "SQLink Info");
+                MessageBox.Show(close_multi_main_exception.Message, "SQLink Info");
                 return;
                 
             };
@@ -74,7 +74,6 @@ namespace SQLink
         {
             if (checkBoxAD.Checked)
             {
-
                 AD_auth = true;
             }
             else

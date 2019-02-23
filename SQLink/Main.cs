@@ -24,25 +24,27 @@ namespace SQLink
 
         private void button1_Click(object sender, EventArgs e) //DBcheck button
         {
-            SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-            SqlCommand cmdX = SQLCon.CreateCommand();
-            SQLCon.Open();
-            cmdX.CommandType = CommandType.Text;
-            cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";
-            cmdX.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmdX);
-            da.Fill(dt);
-            MainViewGrid.DataSource = dt;
-            SQLCon.Close();
+            using (SqlConnection conn_dbcheck = new SqlConnection(DbConnection.ConnectionString))
+            {
+                SqlCommand cmd_dbcheck = conn_dbcheck.CreateCommand();
+                conn_dbcheck.Open();
+                cmd_dbcheck.CommandType = CommandType.Text;
+                cmd_dbcheck.CommandText = "Use master exec dbo.GeneralServerDBInfo";
+                cmd_dbcheck.ExecuteNonQuery();
+                DataTable dt_dbcheck = new DataTable();
+                SqlDataAdapter da_dbcheck = new SqlDataAdapter(cmd_dbcheck);
+                da_dbcheck.Fill(dt_dbcheck);
+                MainViewGrid.DataSource = dt_dbcheck;
+                conn_dbcheck.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)  //Reconnect button
         {
             try
             {
-                Login t1 = new Login();
-                t1.Show();
+                Login reconnect_login = new Login();
+                reconnect_login.Show();
                 Login.AD_auth = false;
                 this.Dispose(false);
              }
@@ -65,39 +67,34 @@ namespace SQLink
 
         private void GoBtn_Click(object sender, EventArgs e) //Execute SQL command button
         {
-            using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString))
-            {
-                {
-                    SqlConnection SQL01 = new SqlConnection(DbConnection.ConnectionString);
-                    SqlCommand cmd1 = SQL01.CreateCommand(); 
-                    SQL01.Open();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = " " + EnterTextBox.Text.Trim() + " ";
+            using (SqlConnection conn_execute = new SqlConnection(DbConnection.ConnectionString))
+            {  
+                    SqlCommand cmd_execute = conn_execute.CreateCommand();
+                    conn_execute.Open();
+                    cmd_execute.CommandType = CommandType.Text;
+                    cmd_execute.CommandText = " " + EnterTextBox.Text.Trim() + " ";
                         try
                         {
-                            cmd1.ExecuteNonQuery();
+                        cmd_execute.ExecuteNonQuery();
                         }
                         catch (Exception ex2)
                         {
                             MessageBox.Show(ex2.Message, "SQLink Info");
-                            SQL01.Close();
+                            conn_execute.Close();
                             return;
                         };
-                    DataTable T1 = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd1);
-                    da.Fill(T1);
-                    MainViewGrid.DataSource = T1;
-                    SQL01.Close();
+                            DataTable dt_execute = new DataTable();
+                            SqlDataAdapter da_execute = new SqlDataAdapter(cmd_execute);
+                            da_execute.Fill(dt_execute);
+                            MainViewGrid.DataSource = dt_execute;
+                            conn_execute.Close();
                 }
-            }
         }
 
        public void disp_data()  //wyświetlana na wstępnie pusta zawartość disp data by grid był czysty
         {
 
         } 
-
-    
 
         private void Main_Load(object sender, EventArgs e)   //Poprzednie łączenie z bazą, dublowało połączenia
         {
@@ -122,31 +119,33 @@ namespace SQLink
 
         private void Version_Click(object sender, EventArgs e)
         {
-            SqlConnection conVer = new SqlConnection(DbConnection.ConnectionString);
-            SqlCommand cmdX = conVer.CreateCommand();
+            using (SqlConnection conn_ver_check = new SqlConnection(DbConnection.ConnectionString))
+            {
+                SqlCommand cmd_ver_check = conn_ver_check.CreateCommand();
                 try
-                {            
-                conVer.Open();
-                }
-                catch (Exception ex6)
                 {
-                MessageBox.Show(ex6.Message, "SQLink info");
-                return;
+                    conn_ver_check.Open();
+                }
+                catch (Exception ver_check_exception)
+                {
+                    MessageBox.Show(ver_check_exception.Message, "SQLink info");
+                    return;
                 };
-                    cmdX.CommandType = CommandType.Text;
-                    cmdX.CommandText = "select @@VERSION";
-                    cmdX.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmdX);
-                    da.Fill(dt);
-                    MainViewGrid.DataSource = dt;
-                    conVer.Close();        
+                cmd_ver_check.CommandType = CommandType.Text;
+                cmd_ver_check.CommandText = "select @@VERSION";
+                cmd_ver_check.ExecuteNonQuery();
+                DataTable dt_ver_check = new DataTable();
+                SqlDataAdapter da_ver_check = new SqlDataAdapter(cmd_ver_check);
+                da_ver_check.Fill(dt_ver_check);
+                MainViewGrid.DataSource = dt_ver_check;
+                conn_ver_check.Close();
+            }
         }
 
         private void Active_connection_Click(object sender, EventArgs e) //active connections button
         {
-            {
-                SqlConnection connection_actConn = new SqlConnection(DbConnection.ConnectionString);
+            using (SqlConnection connection_actConn = new SqlConnection(DbConnection.ConnectionString))
+            {               
                 SqlCommand cmd_actConn = connection_actConn.CreateCommand();
                 connection_actConn.Open();
                 cmd_actConn.CommandType = CommandType.Text;
@@ -162,8 +161,8 @@ namespace SQLink
 
         private void ActiveS_Click(object sender, EventArgs e) //Active session Button
         {
+            using (SqlConnection connection_actsession = new SqlConnection(DbConnection.ConnectionString))
             {
-                SqlConnection connection_actsession = new SqlConnection(DbConnection.ConnectionString);
                 SqlCommand cmd_actSession = connection_actsession.CreateCommand();
                 connection_actsession.Open();
                 cmd_actSession.CommandType = CommandType.Text;
@@ -179,13 +178,14 @@ namespace SQLink
 
         private void Kill_session_button_Click(object sender, EventArgs e) //Kill session button
         {
-            {
-                SqlConnection connection_kill = new SqlConnection(DbConnection.ConnectionString);
+            
+            using (SqlConnection connection_kill = new SqlConnection(DbConnection.ConnectionString)) 
+            { 
                 SqlCommand cmd_kill = connection_kill.CreateCommand();
                 connection_kill.Open();
                 cmd_kill.CommandType = CommandType.Text;
                 cmd_kill.CommandText = "kill " + IDbox.Text.Trim() + " ";              
-                 try
+                    try
                     {
                     cmd_kill.ExecuteNonQuery();
                     }
@@ -206,9 +206,8 @@ namespace SQLink
 
         private void LastBackup_Click(object sender, EventArgs e) //Backup check button
         {
-
-            {
-                SqlConnection connection_backup = new SqlConnection(DbConnection.ConnectionString);
+            using(SqlConnection connection_backup = new SqlConnection(DbConnection.ConnectionString))
+            { 
                 SqlCommand cmd_backup = connection_backup.CreateCommand();
                 connection_backup.Open();
                 cmd_backup.CommandType = CommandType.Text;
@@ -222,10 +221,11 @@ namespace SQLink
             }   
         }
 
-        private void LogSpace_Click(object sender, EventArgs e)
+        private void LogSpace_Click(object sender, EventArgs e) //check space
         {
+
+            using (SqlConnection connection_logspace = new SqlConnection(DbConnection.ConnectionString))
             {
-                SqlConnection connection_logspace = new SqlConnection(DbConnection.ConnectionString);
                 SqlCommand cmd_logspace = connection_logspace.CreateCommand();
                 connection_logspace.Open();
                 cmd_logspace.CommandType = CommandType.Text;
