@@ -13,107 +13,43 @@ namespace SQLink
 {
     public partial class Login : Form
     {
-        public static bool AD_auth = false;
-       // public static bool connect_again = false;
-
-         
+        public static bool AD_auth = false; //warunek do logowania przez Windows Authentication
+                
         public Login()
         {
             InitializeComponent();
         }
 
-        //WinAuth- łączenie autentykacją Windowsa
-        //SqlConnection WinAuth = new SqlConnection(@"Data Source=SRV-SQL5;Initial Catalog=SQLinkDB;Integrated Security=True");
-        private void button2_Click(object sender, EventArgs e)  //łączenie z bazą danych przy użyciu wprowadzonych danych (sa we bazie w tabeli)
+        private void button2_Click(object sender, EventArgs e) //Guzik Connect od którego zaczyna się łączenie
         {
 
-
-            //zmienna aktyv_login= true
-            //if aktiv_login=1
-            //conn.closez
-
-            //zmienna connect_again = true, w guziku reconnect (1 to false 0 to true)
-            //tuaj jeśli zmienna connect_again = true to conn.close else conn open, connect_again = false
-
-            /*
-             
-             
-             
-             
-             */
-
-
-          //  conn.Close();
             DbConnection.Initlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
-            SqlConnection main_connection = new SqlConnection(DbConnection.ConnectionString); //testuje czy działa połączenie
-            //using (SqlConnection conn = new SqlConnection(DbConnection.ConnectionString)) //testuje czy działa połączenie
-                                                                                          //  bool conn = (connection.State == ConnectionState.Open);
+            using (SqlConnection main_connection = new SqlConnection(DbConnection.ConnectionString))
+            {
                 try
                 {
-
-                /* 
-
-
-        SqlConnection SQLCon = new SqlConnection(DbConnection.ConnectionString);
-        SqlCommand cmdX = SQLCon.CreateCommand();
-        SQLCon.Open();
-        cmdX.CommandType = CommandType.Text;
-        cmdX.CommandText = "Use master exec dbo.GeneralServerDBInfo";
-        cmdX.ExecuteNonQuery();
-
-        DataTable dt = new DataTable();
-        SqlDataAdapter da = new SqlDataAdapter(cmdX);
-        da.Fill(dt);
-        MainViewGrid.DataSource = dt;
-        SQLCon.Close();
-
-                
-
-
-                 */
-                main_connection.Open();
-                SqlConnection.ClearPool(main_connection);
-               // conn.Close();
-               // conn.Dispose();
+                    main_connection.Open();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "SQLink info");
-                   // conn.Close();
-                   // conn.Dispose();
                     DbConnection.isInitilized = false;
                     return;
                 }
-                finally
-                {
-                
-              //  conn.Close();
-               // conn.Dispose();
+                MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
             }
 
-  
 
-            MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
-            //if number of conn <1, close first conn
-
-            this.Hide();
-
-            
-
-            try   //sprawdza czy jest otwarte okno main, jak jest to je zamyka
+            try   //sprawdza czy jest otwarte więcej niż 1 okno main, jeżeli tak to je zamyka
             {
                 if (Application.OpenForms.OfType<Main>().Count() == 1)
                 {
                     Application.OpenForms.OfType<Main>().First().Close();
                 }
-                /*  if (Application.OpenForms.OfType<Login>().Count() == 1)
-                    {
-                        Application.OpenForms.OfType<Login>().First().Close();
-                        //  conn.Close();
-                    }*/
-                    
-                 Main run_main = new Main(); //odpala główne okno programu
-                 run_main.Show();
+              
+                Main run_main = new Main(); //odpala główne okno programu po połączeniu do SQL Servera
+                run_main.Show();
+                this.Hide();
             }
             catch (Exception ex4)
             {
@@ -123,19 +59,8 @@ namespace SQLink
             };
             
         }
-        
-        
-        //transfer adresu serwera miedzy formami (faza testów
-       /* Main originalForm;
-        public Login(Main incomingForm)
-        {
-            originalForm = incomingForm;
-            InitializeComponent();
-        }*/
-        //transfer adresu serwera miedzy formami
-
-
-        private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na ID
+       
+        private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na SQL Login
         {
 
         }
@@ -144,7 +69,7 @@ namespace SQLink
         {
 
         }
-
+        /*
         private void label3_Click(object sender, EventArgs e)  //password label
         {
 
@@ -154,13 +79,13 @@ namespace SQLink
         {
 
         }
-
+      
         private void checkBox2_CheckedChanged(object sender, EventArgs e)  // checkbox zapamietaj login 
         {
 
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)  //checkbox windows auth było private nie public
+          */
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)  //checkbox Windows Authentication
         {
             if (checkBoxAD.Checked)
             {
@@ -171,13 +96,6 @@ namespace SQLink
             {
                 AD_auth = false;
             }
-              /*((CheckBox)(checkBoxAD)).Checked.ToString();
-                  MessageBox.Show("po AD będzie", "SQLink Info");
-              }
-              else 
-              {
-                  //Połączenie po SQL auth
-              }*/
         }
 
         private void Login_Load(object sender, EventArgs e)  //okno login ogólne 
@@ -189,30 +107,7 @@ namespace SQLink
         {
 
         }
-        /*
-        private void ADConnButton_Click(object sender, EventArgs e)  //to ponizej do wywalenia
-        {
-            ADConnection.ADInitlizlie(srvnamebox.Text, dbnamebox.Text, IDtextBox.Text, PasstextBox.Text);
-            using (SqlConnection connAD = new SqlConnection(ADConnection.ADConnectionString)) //testuje czy działa połączenie
-
-                try
-                {
-                    connAD.Open();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "SQLink Info");
-                    connAD.Close();
-                    ADConnection.isADInitilized = false;
-                    return;
-                };
-            MessageBox.Show("You are now connected to " + srvnamebox.Text, "SQLink Info");
-            this.Hide();
-            Main C2 = new Main();
-            C2.Show();
-
-        }*/
-        
+            
         private void exit_login_button_Click(object sender, EventArgs e)
         {
             this.Close();

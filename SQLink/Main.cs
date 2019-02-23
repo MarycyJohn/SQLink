@@ -55,17 +55,32 @@ public partial class Main : Form
             //Login.run_login.Close();
             //Login.ActiveForm.Dispose();
 
-
+           // Login.Visible = true;
           
             try
                         {
 
-                   //      if (Application.OpenForms.OfType<Login>().Count() == 1)
-                  //       {
-                    //greatJob backup = new greatJob();
-  
-                    Login new_run_login = new Login();
-                    new_run_login.Show();
+                //      if (Application.OpenForms.OfType<Login>().Count() == 1)
+                //       {
+                //greatJob backup = new greatJob();
+                // Show();
+                MessageBox.Show("Incomming magic");
+                /*FormCollection Login = Application.OpenForms;
+                foreach (Form  Main in Login)
+                {
+                    Show();
+
+                };*/
+
+
+                Login t1 = new Login();
+                t1.Show();
+                this.Dispose(false);
+
+                MessageBox.Show("there it was");
+
+               // Login new_run_login = new Login();
+                //    new_run_login.Show();
 
                    // Application.OpenForms.OfType<Login>().First().Close();
                    // Application.OpenForms.OfType<greatJob>().First().Dispose();
@@ -88,9 +103,9 @@ public partial class Main : Form
            // Login new_run_login = new Login();
             // uruchamia okno login
             
-            this.Hide();
-            this.Close();
-           
+          //  this.Hide();
+          //  this.Close();
+            //isInitilized = true;
             //SqlConnection.ClearAllPools;
             //IF (DbConnection.isInitilized = conn
             //Application.OpenForms.OfType<Login>().First().Close();
