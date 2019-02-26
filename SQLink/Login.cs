@@ -10,23 +10,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-/*
- amespace SQLink
-{
- 
-   
-                }
-                catch (Exception first_connection_exception)
-                {
-                    MessageBox.Show(first_connection_exception.Message, "SQLink info");
-                    DbConnection.isInitilized = false;
-                    return;
-                }
-                MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
-                main_connection.Close(); // <<<< czemu tutaj tego nie dodajesz?
-            }
-     
-     */
 namespace SQLink
 {
     public partial class Login : Form

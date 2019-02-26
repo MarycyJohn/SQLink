@@ -17,7 +17,7 @@ namespace SQLink
                 new Exception("Connection already initilized. Make sure you have only one point of initalization");
                 isInitilized = true;
 
-            if (Login.AD_auth == true) //sprawdza jaka jest wybrana autentykacja (SQL czy Windows auth
+            if (Login.AD_auth == true) //sprawdza jaka jest wybrana autentykacja (SQL czy Windows auth)
             {
                 MessageBox.Show("logujemy po AD", "SQLink Info");
                 connectionString = string.Format("Data Source={0};initial catalog={1};persist security info=True;Integrated Security=SSPI;pooling=false",
