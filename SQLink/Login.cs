@@ -8,31 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 
-/*
- amespace SQLink
-{
- 
-   
-                }
-                catch (Exception first_connection_exception)
-                {
-                    MessageBox.Show(first_connection_exception.Message, "SQLink info");
-                    DbConnection.isInitilized = false;
-                    return;
-                }
-                MessageBox.Show("You are now connected to " + srvnamebox.Text, "Server Info");
-                main_connection.Close(); // <<<< czemu tutaj tego nie dodajesz?
-            }
-     
-     */
 namespace SQLink
 {
     public partial class Login : Form
     {
         public static bool AD_auth = false; //warunek do logowania przez Windows Authentication
-                
+        public const int WM_NCLBUTTONDOWN = 0xA1; //przesuwanie okna
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public Login()
         {
             InitializeComponent();
@@ -65,7 +55,7 @@ namespace SQLink
                 {
                     Application.OpenForms.OfType<Main>().First().Close();
                 }
-              
+
                 Main run_main = new Main(); //odpala główne okno programu po połączeniu do SQL Servera
                 run_main.Show();
                 this.Hide();
@@ -74,11 +64,11 @@ namespace SQLink
             {
                 MessageBox.Show(close_multi_main_exception.Message, "SQLink Info");
                 return;
-                
+
             };
-            
+
         }
-       
+
         private void IDtextBox_TextChanged(object sender, EventArgs e)  //okienko na SQL Login
         {
 
@@ -110,7 +100,7 @@ namespace SQLink
         {
 
         }
-            
+
         private void exit_login_button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -134,7 +124,6 @@ namespace SQLink
             {
                 srvnamebox.Text = "";
                 srvnamebox.ForeColor = Color.Black;
-
             }
         }
 
@@ -144,7 +133,6 @@ namespace SQLink
             {
                 srvnamebox.Text = "SQL Server name";
                 srvnamebox.ForeColor = Color.Silver;
-
             }
         }
 
@@ -154,7 +142,6 @@ namespace SQLink
             {
                 PasstextBox.Text = "";
                 PasstextBox.ForeColor = Color.Black;
-
             }
         }
 
@@ -190,7 +177,7 @@ namespace SQLink
 
         private void dbnamebox_Enter(object sender, EventArgs e)
         {
-            
+
             if (dbnamebox.Text == "DB name")
             {
                 dbnamebox.Text = "";
@@ -206,6 +193,15 @@ namespace SQLink
                 dbnamebox.Text = "DB name";
                 dbnamebox.ForeColor = Color.Silver;
 
+            }
+        }
+
+        private void Login_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
     }

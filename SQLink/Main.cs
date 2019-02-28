@@ -17,6 +17,13 @@ namespace SQLink
     public partial class Main : Form
     {
         public string text;
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
 
         public Main()
         {
@@ -107,17 +114,7 @@ namespace SQLink
 
         private void Main_Load(object sender, EventArgs e)   //Poprzednie łączenie z bazą, dublowało połączenia
         {
-             /* try 
-                {
-                    this.tESTTableAdapter.Fill(this.sQLinkDBDataSet.TEST);
 
-                    disp_data();
-                } 
-                catch(Exception)
-                {
-                    new System.ArgumentNullException();
-                }
-                 */
             }
 
         private void button3_Click(object sender, EventArgs e) //Exit app button
@@ -147,7 +144,6 @@ namespace SQLink
                 SqlDataAdapter da_ver_check = new SqlDataAdapter(cmd_ver_check);
                 da_ver_check.Fill(dt_ver_check);
                  MainViewGrid.DataSource = dt_ver_check;
-                //Disp_data_text_box.DataSource = dt_ver_check;
                 conn_ver_check.Close();
             }
         }
@@ -259,13 +255,6 @@ namespace SQLink
 
         }
 
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-
         private void Main_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -274,6 +263,25 @@ namespace SQLink
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
 
+        }
+
+            private void panel1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    ReleaseCapture();
+                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                }
+
+            }
+
+        private void sidepanel_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }

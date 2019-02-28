@@ -47,7 +47,7 @@
             this.ConnectDBbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
             this.ConnectDBbtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ConnectDBbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConnectDBbtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ConnectDBbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ConnectDBbtn.ForeColor = System.Drawing.Color.LightGray;
             this.ConnectDBbtn.Location = new System.Drawing.Point(0, 192);
             this.ConnectDBbtn.Name = "ConnectDBbtn";
@@ -59,11 +59,11 @@
             // 
             // IDtextBox
             // 
-            this.IDtextBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.IDtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.IDtextBox.ForeColor = System.Drawing.Color.Silver;
             this.IDtextBox.Location = new System.Drawing.Point(12, 118);
             this.IDtextBox.Name = "IDtextBox";
-            this.IDtextBox.Size = new System.Drawing.Size(164, 20);
+            this.IDtextBox.Size = new System.Drawing.Size(164, 19);
             this.IDtextBox.TabIndex = 3;
             this.IDtextBox.Text = "SQL Login";
             this.IDtextBox.TextChanged += new System.EventHandler(this.IDtextBox_TextChanged);
@@ -72,12 +72,12 @@
             // 
             // PasstextBox
             // 
-            this.PasstextBox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PasstextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PasstextBox.ForeColor = System.Drawing.Color.Silver;
             this.PasstextBox.Location = new System.Drawing.Point(12, 147);
             this.PasstextBox.Name = "PasstextBox";
             this.PasstextBox.PasswordChar = '*';
-            this.PasstextBox.Size = new System.Drawing.Size(164, 20);
+            this.PasstextBox.Size = new System.Drawing.Size(164, 19);
             this.PasstextBox.TabIndex = 4;
             this.PasstextBox.Text = "P@ssw0rd";
             this.PasstextBox.TextChanged += new System.EventHandler(this.PasstextBox_TextChanged);
@@ -87,10 +87,10 @@
             // checkBoxAD
             // 
             this.checkBoxAD.AutoSize = true;
-            this.checkBoxAD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxAD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.checkBoxAD.Location = new System.Drawing.Point(182, 138);
             this.checkBoxAD.Name = "checkBoxAD";
-            this.checkBoxAD.Size = new System.Drawing.Size(107, 36);
+            this.checkBoxAD.Size = new System.Drawing.Size(94, 30);
             this.checkBoxAD.TabIndex = 8;
             this.checkBoxAD.Text = "Windows \r\nAuthentication";
             this.checkBoxAD.UseVisualStyleBackColor = true;
@@ -99,11 +99,11 @@
             // srvnamebox
             // 
             this.srvnamebox.BackColor = System.Drawing.Color.White;
-            this.srvnamebox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.srvnamebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.srvnamebox.ForeColor = System.Drawing.Color.Silver;
             this.srvnamebox.Location = new System.Drawing.Point(12, 89);
             this.srvnamebox.Name = "srvnamebox";
-            this.srvnamebox.Size = new System.Drawing.Size(120, 20);
+            this.srvnamebox.Size = new System.Drawing.Size(120, 19);
             this.srvnamebox.TabIndex = 10;
             this.srvnamebox.Text = "SQL Server name";
             this.srvnamebox.TextChanged += new System.EventHandler(this.srvnamebox_TextChanged);
@@ -112,11 +112,11 @@
             // 
             // dbnamebox
             // 
-            this.dbnamebox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dbnamebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dbnamebox.ForeColor = System.Drawing.Color.Silver;
             this.dbnamebox.Location = new System.Drawing.Point(138, 89);
             this.dbnamebox.Name = "dbnamebox";
-            this.dbnamebox.Size = new System.Drawing.Size(111, 20);
+            this.dbnamebox.Size = new System.Drawing.Size(111, 19);
             this.dbnamebox.TabIndex = 14;
             this.dbnamebox.Text = "DB name";
             this.dbnamebox.Enter += new System.EventHandler(this.dbnamebox_Enter);
@@ -175,6 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SQLink";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

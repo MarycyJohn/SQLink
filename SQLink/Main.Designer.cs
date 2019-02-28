@@ -39,10 +39,6 @@
             this.tESTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tESTTableAdapter = new SQLink.SQLinkDBDataSetTableAdapters.TESTTableAdapter();
             this.MainViewGrid = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.Active_connection = new System.Windows.Forms.Button();
             this.IDbox = new System.Windows.Forms.TextBox();
             this.Kill_session_button = new System.Windows.Forms.Button();
@@ -55,8 +51,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.Disp_data_text_box = new System.Windows.Forms.TextBox();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.sQLinkDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sQLinkDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tESTBindingSource)).BeginInit();
@@ -150,60 +144,11 @@
             this.MainViewGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.MainViewGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.MainViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MainViewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Data});
             this.MainViewGrid.Location = new System.Drawing.Point(142, 151);
             this.MainViewGrid.Name = "MainViewGrid";
             this.MainViewGrid.Size = new System.Drawing.Size(568, 246);
             this.MainViewGrid.TabIndex = 5;
             this.MainViewGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(103, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 19);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.Text = "Database";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.BackColor = System.Drawing.Color.LightGray;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(208, 37);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Free Space in DB";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.AutoSize = true;
-            this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button5.BackColor = System.Drawing.Color.LightGray;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.Location = new System.Drawing.Point(100, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(99, 23);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Free Space in file";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(208, 11);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(101, 19);
-            this.textBox3.TabIndex = 16;
-            this.textBox3.Text = "File name";
             // 
             // Active_connection
             // 
@@ -214,7 +159,7 @@
             this.Active_connection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Active_connection.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Active_connection.ForeColor = System.Drawing.Color.LightGray;
-            this.Active_connection.Location = new System.Drawing.Point(0, 98);
+            this.Active_connection.Location = new System.Drawing.Point(0, 133);
             this.Active_connection.Name = "Active_connection";
             this.Active_connection.Size = new System.Drawing.Size(136, 35);
             this.Active_connection.TabIndex = 18;
@@ -263,7 +208,7 @@
             this.Version.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Version.ForeColor = System.Drawing.Color.LightGray;
-            this.Version.Location = new System.Drawing.Point(0, 133);
+            this.Version.Location = new System.Drawing.Point(0, 168);
             this.Version.Margin = new System.Windows.Forms.Padding(2);
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(136, 35);
@@ -280,7 +225,7 @@
             this.ActiveS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ActiveS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ActiveS.ForeColor = System.Drawing.Color.LightGray;
-            this.ActiveS.Location = new System.Drawing.Point(0, 238);
+            this.ActiveS.Location = new System.Drawing.Point(0, 98);
             this.ActiveS.Margin = new System.Windows.Forms.Padding(2);
             this.ActiveS.Name = "ActiveS";
             this.ActiveS.Size = new System.Drawing.Size(136, 35);
@@ -297,7 +242,7 @@
             this.LastBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LastBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LastBackup.ForeColor = System.Drawing.Color.LightGray;
-            this.LastBackup.Location = new System.Drawing.Point(0, 168);
+            this.LastBackup.Location = new System.Drawing.Point(0, 203);
             this.LastBackup.Margin = new System.Windows.Forms.Padding(2);
             this.LastBackup.Name = "LastBackup";
             this.LastBackup.Size = new System.Drawing.Size(136, 35);
@@ -314,7 +259,7 @@
             this.LogSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogSpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LogSpace.ForeColor = System.Drawing.Color.LightGray;
-            this.LogSpace.Location = new System.Drawing.Point(0, 203);
+            this.LogSpace.Location = new System.Drawing.Point(0, 238);
             this.LogSpace.Name = "LogSpace";
             this.LogSpace.Size = new System.Drawing.Size(136, 35);
             this.LogSpace.TabIndex = 26;
@@ -328,20 +273,21 @@
             this.sidepanel.Controls.Add(this.button1);
             this.sidepanel.Controls.Add(this.Kill_session_button);
             this.sidepanel.Controls.Add(this.IDbox);
-            this.sidepanel.Controls.Add(this.ActiveS);
             this.sidepanel.Controls.Add(this.LogSpace);
             this.sidepanel.Controls.Add(this.LastBackup);
             this.sidepanel.Controls.Add(this.Version);
             this.sidepanel.Controls.Add(this.Active_connection);
+            this.sidepanel.Controls.Add(this.ActiveS);
             this.sidepanel.Controls.Add(this.GoBtn);
             this.sidepanel.Controls.Add(this.panel2);
             this.sidepanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidepanel.Location = new System.Drawing.Point(0, 0);
             this.sidepanel.Margin = new System.Windows.Forms.Padding(2);
             this.sidepanel.Name = "sidepanel";
-            this.sidepanel.Size = new System.Drawing.Size(136, 653);
+            this.sidepanel.Size = new System.Drawing.Size(136, 405);
             this.sidepanel.TabIndex = 27;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
+            this.sidepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sidepanel_MouseDown);
             // 
             // panel2
             // 
@@ -370,17 +316,14 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(136, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(584, 63);
             this.panel1.TabIndex = 28;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // button3
             // 
@@ -398,28 +341,12 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Disp_data_text_box
-            // 
-            this.Disp_data_text_box.AcceptsTab = true;
-            this.Disp_data_text_box.Location = new System.Drawing.Point(142, 403);
-            this.Disp_data_text_box.Multiline = true;
-            this.Disp_data_text_box.Name = "Disp_data_text_box";
-            this.Disp_data_text_box.Size = new System.Drawing.Size(570, 238);
-            this.Disp_data_text_box.TabIndex = 29;
-            // 
-            // Data
-            // 
-            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Data.HeaderText = "Column1";
-            this.Data.Name = "Data";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(720, 653);
-            this.Controls.Add(this.Disp_data_text_box);
+            this.ClientSize = new System.Drawing.Size(720, 405);
             this.Controls.Add(this.EnterTextBox);
             this.Controls.Add(this.MainViewGrid);
             this.Controls.Add(this.panel1);
@@ -440,7 +367,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,10 +383,6 @@
         private System.Windows.Forms.BindingSource tESTBindingSource;
         private SQLinkDBDataSetTableAdapters.TESTTableAdapter tESTTableAdapter;
         private System.Windows.Forms.DataGridView MainViewGrid;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.Button Active_connection;
 		private System.Windows.Forms.TextBox IDbox;
 		private System.Windows.Forms.Button Kill_session_button;
@@ -473,7 +395,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox Disp_data_text_box;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
     }
 }
