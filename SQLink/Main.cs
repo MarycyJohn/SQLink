@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml.Linq;
 using System.Configuration;
+using System.Runtime.InteropServices;
 
 namespace SQLink
 {
@@ -29,8 +30,16 @@ namespace SQLink
                 SqlCommand cmd_dbcheck = conn_dbcheck.CreateCommand();
                 conn_dbcheck.Open();
                 cmd_dbcheck.CommandType = CommandType.Text;
-                cmd_dbcheck.CommandText = "Use master exec dbo.GeneralServerDBInfo";
-                cmd_dbcheck.ExecuteNonQuery();
+                cmd_dbcheck.CommandText = "exec dbo.GeneralServerDBInfo";
+                try
+                {
+                    cmd_dbcheck.ExecuteNonQuery();
+                }
+                catch (Exception db_check_ex)
+                {
+                    MessageBox.Show(db_check_ex.Message, "SQLink Info");
+                    return;
+                };
                 DataTable dt_dbcheck = new DataTable();
                 SqlDataAdapter da_dbcheck = new SqlDataAdapter(cmd_dbcheck);
                 da_dbcheck.Fill(dt_dbcheck);
@@ -137,7 +146,8 @@ namespace SQLink
                 DataTable dt_ver_check = new DataTable();
                 SqlDataAdapter da_ver_check = new SqlDataAdapter(cmd_ver_check);
                 da_ver_check.Fill(dt_ver_check);
-                MainViewGrid.DataSource = dt_ver_check;
+                 MainViewGrid.DataSource = dt_ver_check;
+                //Disp_data_text_box.DataSource = dt_ver_check;
                 conn_ver_check.Close();
             }
         }
@@ -241,6 +251,28 @@ namespace SQLink
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void sidepanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void Main_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
 
         }
     }
