@@ -1,5 +1,4 @@
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csprojAssemblyReference.cache
-C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.greatJob.resources
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.Login.resources
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.Main.resources
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.Properties.Resources.resources
@@ -22,3 +21,5 @@ C:\Users\Administrator\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.cs
 C:\Users\Administrator\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.exe
 C:\Users\Administrator\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.pdb
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\bin\Debug\System.Management.Automation.dll
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csproj.CopyComplete
