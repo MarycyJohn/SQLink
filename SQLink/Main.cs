@@ -283,6 +283,12 @@ namespace SQLink
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void NewPSWindow_Click(object sender, EventArgs e)
+        {
+            PowerShellDisp test = new PowerShellDisp();
+            test.Show();
+        }
     }
 }
 

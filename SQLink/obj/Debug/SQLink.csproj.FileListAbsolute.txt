@@ -24,3 +24,4 @@ C:\Users\Administrator\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.pd
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\bin\Debug\System.Management.Automation.dll
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csproj.CopyComplete
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\HowToRunPowerShell.FormPowerShellSample.resources
+C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.PowerShellDisp.resources
