@@ -47,11 +47,11 @@
             this.LastBackup = new System.Windows.Forms.Button();
             this.LogSpace = new System.Windows.Forms.Button();
             this.sidepanel = new System.Windows.Forms.Panel();
+            this.NewPSWindow = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.NewPSWindow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sQLinkDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sQLinkDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tESTBindingSource)).BeginInit();
@@ -72,7 +72,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.LightGray;
             this.button1.Location = new System.Drawing.Point(0, 336);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(181, 43);
             this.button1.TabIndex = 3;
@@ -87,7 +87,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.Location = new System.Drawing.Point(601, 7);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 43);
             this.button2.TabIndex = 4;
@@ -107,8 +107,10 @@
             // 
             // EnterTextBox
             // 
+            this.EnterTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.EnterTextBox.Location = new System.Drawing.Point(189, 87);
-            this.EnterTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EnterTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EnterTextBox.Multiline = true;
             this.EnterTextBox.Name = "EnterTextBox";
             this.EnterTextBox.Size = new System.Drawing.Size(759, 91);
@@ -125,7 +127,7 @@
             this.GoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GoBtn.ForeColor = System.Drawing.Color.LightGray;
             this.GoBtn.Location = new System.Drawing.Point(0, 78);
-            this.GoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.GoBtn.Name = "GoBtn";
             this.GoBtn.Size = new System.Drawing.Size(181, 43);
             this.GoBtn.TabIndex = 7;
@@ -145,12 +147,15 @@
             // MainViewGrid
             // 
             this.MainViewGrid.AllowUserToOrderColumns = true;
+            this.MainViewGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MainViewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.MainViewGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.MainViewGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.MainViewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainViewGrid.Location = new System.Drawing.Point(189, 186);
-            this.MainViewGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MainViewGrid.Margin = new System.Windows.Forms.Padding(4);
             this.MainViewGrid.Name = "MainViewGrid";
             this.MainViewGrid.Size = new System.Drawing.Size(757, 303);
             this.MainViewGrid.TabIndex = 5;
@@ -166,7 +171,7 @@
             this.Active_connection.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Active_connection.ForeColor = System.Drawing.Color.LightGray;
             this.Active_connection.Location = new System.Drawing.Point(0, 164);
-            this.Active_connection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Active_connection.Margin = new System.Windows.Forms.Padding(4);
             this.Active_connection.Name = "Active_connection";
             this.Active_connection.Size = new System.Drawing.Size(181, 43);
             this.Active_connection.TabIndex = 18;
@@ -176,15 +181,13 @@
             // 
             // IDbox
             // 
-            this.IDbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.IDbox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.IDbox.BackColor = System.Drawing.SystemColors.Control;
             this.IDbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.IDbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IDbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.IDbox.Location = new System.Drawing.Point(109, 377);
-            this.IDbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IDbox.Margin = new System.Windows.Forms.Padding(4);
             this.IDbox.Multiline = true;
             this.IDbox.Name = "IDbox";
             this.IDbox.Size = new System.Drawing.Size(72, 43);
@@ -201,7 +204,7 @@
             this.Kill_session_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Kill_session_button.ForeColor = System.Drawing.Color.LightGray;
             this.Kill_session_button.Location = new System.Drawing.Point(0, 377);
-            this.Kill_session_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Kill_session_button.Margin = new System.Windows.Forms.Padding(4);
             this.Kill_session_button.Name = "Kill_session_button";
             this.Kill_session_button.Size = new System.Drawing.Size(109, 43);
             this.Kill_session_button.TabIndex = 20;
@@ -269,7 +272,7 @@
             this.LogSpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LogSpace.ForeColor = System.Drawing.Color.LightGray;
             this.LogSpace.Location = new System.Drawing.Point(0, 293);
-            this.LogSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LogSpace.Margin = new System.Windows.Forms.Padding(4);
             this.LogSpace.Name = "LogSpace";
             this.LogSpace.Size = new System.Drawing.Size(181, 43);
             this.LogSpace.TabIndex = 26;
@@ -299,6 +302,16 @@
             this.sidepanel.TabIndex = 27;
             this.sidepanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidepanel_Paint);
             this.sidepanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sidepanel_MouseDown);
+            // 
+            // NewPSWindow
+            // 
+            this.NewPSWindow.Location = new System.Drawing.Point(41, 447);
+            this.NewPSWindow.Name = "NewPSWindow";
+            this.NewPSWindow.Size = new System.Drawing.Size(75, 23);
+            this.NewPSWindow.TabIndex = 27;
+            this.NewPSWindow.Text = "NewPS";
+            this.NewPSWindow.UseVisualStyleBackColor = true;
+            this.NewPSWindow.Click += new System.EventHandler(this.NewPSWindow_Click);
             // 
             // panel2
             // 
@@ -345,23 +358,13 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button3.Image = global::SQLink.Properties.Resources.exit;
             this.button3.Location = new System.Drawing.Point(720, 7);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 43);
             this.button3.TabIndex = 22;
             this.button3.UseMnemonic = false;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // NewPSWindow
-            // 
-            this.NewPSWindow.Location = new System.Drawing.Point(41, 447);
-            this.NewPSWindow.Name = "NewPSWindow";
-            this.NewPSWindow.Size = new System.Drawing.Size(75, 23);
-            this.NewPSWindow.TabIndex = 27;
-            this.NewPSWindow.Text = "NewPS";
-            this.NewPSWindow.UseVisualStyleBackColor = true;
-            this.NewPSWindow.Click += new System.EventHandler(this.NewPSWindow_Click);
             // 
             // Main
             // 
@@ -375,7 +378,7 @@
             this.Controls.Add(this.sidepanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

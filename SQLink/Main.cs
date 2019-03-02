@@ -46,6 +46,7 @@ namespace SQLink
                 {
                     MessageBox.Show(db_check_ex.Message, "SQLink Info");
                     return;
+
                 };
                 DataTable dt_dbcheck = new DataTable();
                 SqlDataAdapter da_dbcheck = new SqlDataAdapter(cmd_dbcheck);
