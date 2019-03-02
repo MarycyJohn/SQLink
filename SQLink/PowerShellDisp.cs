@@ -11,12 +11,14 @@ using System.IO;
 using System.Collections.ObjectModel;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
-
+using RemotePowerShell;
 
 namespace SQLink
 {
     public partial class PowerShellDisp : Form
     {
+        private PowerShellEngine psEngine = new PowerShellEngine();
+        
         private const string dragDropFormat = "FileDrop";
         public PowerShellDisp()
         {
@@ -107,6 +109,18 @@ namespace SQLink
             {
                 OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
             }   
+        }
+
+        private void TempExeButton_Click(object sender, EventArgs e)
+        {
+
+            OutputBox.Clear();
+            // textBoxRemoteMachine to pole adresu serwera, zostawić puste jak local ma być
+            var results = psEngine.ExecuteScript(InputBox.Text, null, PSServerIP.Text); //radiogetitem na input textbox komendy
+            foreach (var result in results)
+            {
+                OutputBox.AppendText(result.ToString() + "\r\n");
+            }
         }
     }
 }

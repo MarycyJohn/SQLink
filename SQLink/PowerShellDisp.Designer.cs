@@ -33,6 +33,8 @@
             this.OutputBox = new System.Windows.Forms.TextBox();
             this.PSClosewindow = new System.Windows.Forms.Button();
             this.LastEventLog = new System.Windows.Forms.Button();
+            this.PSServerIP = new System.Windows.Forms.TextBox();
+            this.TempExeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExecutePS
@@ -53,7 +55,7 @@
             this.InputBox.Location = new System.Drawing.Point(12, 12);
             this.InputBox.Multiline = true;
             this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(785, 249);
+            this.InputBox.Size = new System.Drawing.Size(785, 204);
             this.InputBox.TabIndex = 1;
             this.InputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
             // 
@@ -90,11 +92,31 @@
             this.LastEventLog.UseVisualStyleBackColor = true;
             this.LastEventLog.Click += new System.EventHandler(this.LastEventLog_Click);
             // 
+            // PSServerIP
+            // 
+            this.PSServerIP.Location = new System.Drawing.Point(13, 223);
+            this.PSServerIP.Multiline = true;
+            this.PSServerIP.Name = "PSServerIP";
+            this.PSServerIP.Size = new System.Drawing.Size(139, 47);
+            this.PSServerIP.TabIndex = 5;
+            // 
+            // TempExeButton
+            // 
+            this.TempExeButton.Location = new System.Drawing.Point(170, 223);
+            this.TempExeButton.Name = "TempExeButton";
+            this.TempExeButton.Size = new System.Drawing.Size(75, 23);
+            this.TempExeButton.TabIndex = 6;
+            this.TempExeButton.Text = "exeCUTE";
+            this.TempExeButton.UseVisualStyleBackColor = true;
+            this.TempExeButton.Click += new System.EventHandler(this.TempExeButton_Click);
+            // 
             // PowerShellDisp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 532);
+            this.Controls.Add(this.TempExeButton);
+            this.Controls.Add(this.PSServerIP);
             this.Controls.Add(this.LastEventLog);
             this.Controls.Add(this.PSClosewindow);
             this.Controls.Add(this.OutputBox);
@@ -115,5 +137,7 @@
         private System.Windows.Forms.TextBox OutputBox;
         private System.Windows.Forms.Button PSClosewindow;
         private System.Windows.Forms.Button LastEventLog;
+        private System.Windows.Forms.TextBox PSServerIP;
+        private System.Windows.Forms.Button TempExeButton;
     }
 }
