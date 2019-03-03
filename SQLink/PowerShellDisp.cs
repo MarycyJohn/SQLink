@@ -24,9 +24,11 @@ namespace SQLink
         {
             InitializeComponent();
         }
+        
 
         private void ExecutePS_Click(object sender, EventArgs e)
         {
+
             try
             {
                 OutputBox.Clear();
@@ -40,7 +42,6 @@ namespace SQLink
 
             private string RunScript(string scriptText)
             {
-
 
             Runspace runspace = RunspaceFactory.CreateRunspace();
                 runspace.Open();
@@ -113,13 +114,31 @@ namespace SQLink
 
         private void TempExeButton_Click(object sender, EventArgs e)
         {
-
-            OutputBox.Clear();
+           
+           OutputBox.Clear();
             // textBoxRemoteMachine to pole adresu serwera, zostawić puste jak local ma być
             var results = psEngine.ExecuteScript(InputBox.Text, null, PSServerIP.Text); //radiogetitem na input textbox komendy
             foreach (var result in results)
             {
                 OutputBox.AppendText(result.ToString() + "\r\n");
+            }
+        }
+
+        private void OutputBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RemoteTest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OutputBox.Clear();
+                OutputBox.Text = RunScript("sdf");// '$password = "P@ssw0rd" | ConvertTo-SecureString -asPlainText -Force $username = "Administrator"  $credential = New - Object System.Management.Automation.PSCredential($username,$password) Invoke - Command - ComputerName WS2012 - ScriptBlock { get - process } -Credential $credential');
+            }
+            catch (Exception PS_ex)
+            {
+                OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
             }
         }
     }

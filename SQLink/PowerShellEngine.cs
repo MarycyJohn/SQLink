@@ -6,6 +6,8 @@ using System.Text;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
 using System.IO;
+using SQLink;
+using System.Windows.Forms;
 
 namespace RemotePowerShell
 {
@@ -73,7 +75,16 @@ namespace RemotePowerShell
                 WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
                 connectionInfo.ComputerName = machineAddress;
                 Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo);
-                runspace.Open();
+                try
+                {
+                    runspace.Open();
+                }
+                catch (Exception asd123)
+                {
+                    MessageBox.Show(asd123.Message, "SQLink Info");
+                    runspace.Close();
+                };
+
                 _runspaceCache.Add(machineAddress, runspace);
             }
 
