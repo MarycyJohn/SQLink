@@ -18,7 +18,7 @@ namespace SQLink
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            // Login run_login = new Login();
-           // Application.Run(run_login);
+            //Application.Run(run_login);
             PowerShellDisp asd = new PowerShellDisp();
            Application.Run(asd);
            // Application.Run(new Login());  // program startuje z okna Login

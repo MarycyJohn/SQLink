@@ -24,3 +24,17 @@ C:\Users\Administrator\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.pd
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\bin\Debug\System.Management.Automation.dll
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.csproj.CopyComplete
 C:\Users\Ja\Source\Repos\MarycyJohn\SQLink\SQLink\obj\Debug\SQLink.PowerShellDisp.resources
+C:\Users\Maurycy\source\repos\SQLink\SQLink\bin\Debug\SQLink.exe.config
+C:\Users\Maurycy\source\repos\SQLink\SQLink\bin\Debug\SQLink.exe
+C:\Users\Maurycy\source\repos\SQLink\SQLink\bin\Debug\SQLink.pdb
+C:\Users\Maurycy\source\repos\SQLink\SQLink\bin\Debug\System.Management.Automation.dll
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.csprojAssemblyReference.cache
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.Login.resources
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.Main.resources
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.PowerShellDisp.resources
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.Properties.Resources.resources
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.csproj.GenerateResource.cache
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.csproj.CoreCompileInputs.cache
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.csproj.CopyComplete
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.exe
+C:\Users\Maurycy\source\repos\SQLink\SQLink\obj\Debug\SQLink.pdb

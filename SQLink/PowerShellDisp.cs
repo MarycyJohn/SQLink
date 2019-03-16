@@ -104,7 +104,8 @@ namespace SQLink
             try
             {
                 OutputBox.Clear();
-                OutputBox.Text = RunScript("Get-EventLog Application -After (Get-Date).AddHours(-2)");
+                //OutputBox.Text = RunScript("Get-EventLog Application -After (Get-Date).AddHours(-2)");
+                 OutputBox.Text = RunScript("Invoke-Command -ComputerName " + PSServerIP.Text + " -ScriptBlock {" + InputBox.Text + "}");
             }
             catch (Exception PS_ex)
             {
@@ -112,7 +113,7 @@ namespace SQLink
             }   
         }
 
-        private void TempExeButton_Click(object sender, EventArgs e)
+        private void TempExeButton_Click(object sender, EventArgs e)   //DELETE
         {
            
            OutputBox.Clear();
@@ -140,6 +141,11 @@ namespace SQLink
             {
                 OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
             }
+        }
+
+        private void PSServerIP_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
