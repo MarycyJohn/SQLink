@@ -17,7 +17,7 @@ namespace SQLink
 {
     public partial class PowerShellDisp : Form
     {
-        private PowerShellEngine psEngine = new PowerShellEngine();
+ //       private PowerShellEngine psEngine = new PowerShellEngine();
         
         private const string dragDropFormat = "FileDrop";
         public PowerShellDisp()
@@ -113,7 +113,7 @@ namespace SQLink
             }   
         }
 
-        private void TempExeButton_Click(object sender, EventArgs e)   //DELETE
+       /* private void TempExeButton_Click(object sender, EventArgs e)   //DELETE
         {
            
            OutputBox.Clear();
@@ -123,7 +123,7 @@ namespace SQLink
             {
                 OutputBox.AppendText(result.ToString() + "\r\n");
             }
-        }
+        }*/
 
         private void OutputBox_TextChanged(object sender, EventArgs e)
         {
@@ -147,6 +147,21 @@ namespace SQLink
         {
 
         }
+
+        private void RDP_Click(object sender, EventArgs e)
+
+            {
+                try
+                {
+                    OutputBox.Clear();
+                    OutputBox.Text = RunScript("mstsc /v:" + PSServerIP.Text);
+                }
+                catch (Exception PS_ex)
+                {
+                    OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
+                }
+            }
+
     }
 }
 

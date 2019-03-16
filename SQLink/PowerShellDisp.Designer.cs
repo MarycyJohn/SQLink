@@ -34,8 +34,8 @@
             this.PSClosewindow = new System.Windows.Forms.Button();
             this.LastEventLog = new System.Windows.Forms.Button();
             this.PSServerIP = new System.Windows.Forms.TextBox();
-            this.TempExeButton = new System.Windows.Forms.Button();
             this.RemoteTest = new System.Windows.Forms.Button();
+            this.RDP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ExecutePS
@@ -103,16 +103,6 @@
             this.PSServerIP.TabIndex = 5;
             this.PSServerIP.TextChanged += new System.EventHandler(this.PSServerIP_TextChanged);
             // 
-            // TempExeButton
-            // 
-            this.TempExeButton.Location = new System.Drawing.Point(192, 278);
-            this.TempExeButton.Name = "TempExeButton";
-            this.TempExeButton.Size = new System.Drawing.Size(84, 29);
-            this.TempExeButton.TabIndex = 6;
-            this.TempExeButton.Text = "exeCUTE";
-            this.TempExeButton.UseVisualStyleBackColor = true;
-            this.TempExeButton.Click += new System.EventHandler(this.TempExeButton_Click);
-            // 
             // RemoteTest
             // 
             this.RemoteTest.Location = new System.Drawing.Point(908, 151);
@@ -124,13 +114,23 @@
             this.RemoteTest.UseVisualStyleBackColor = true;
             this.RemoteTest.Click += new System.EventHandler(this.RemoteTest_Click);
             // 
+            // RDP
+            // 
+            this.RDP.Location = new System.Drawing.Point(912, 245);
+            this.RDP.Name = "RDP";
+            this.RDP.Size = new System.Drawing.Size(78, 50);
+            this.RDP.TabIndex = 8;
+            this.RDP.Text = "Remote Desktop";
+            this.RDP.UseVisualStyleBackColor = true;
+            this.RDP.Click += new System.EventHandler(this.RDP_Click);
+            // 
             // PowerShellDisp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 665);
+            this.Controls.Add(this.RDP);
             this.Controls.Add(this.RemoteTest);
-            this.Controls.Add(this.TempExeButton);
             this.Controls.Add(this.PSServerIP);
             this.Controls.Add(this.LastEventLog);
             this.Controls.Add(this.PSClosewindow);
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Button PSClosewindow;
         private System.Windows.Forms.Button LastEventLog;
         private System.Windows.Forms.TextBox PSServerIP;
-        private System.Windows.Forms.Button TempExeButton;
         private System.Windows.Forms.Button RemoteTest;
+        private System.Windows.Forms.Button RDP;
     }
 }
