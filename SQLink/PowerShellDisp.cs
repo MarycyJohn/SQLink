@@ -11,7 +11,8 @@ using System.IO;
 using System.Collections.ObjectModel;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
-using RemotePowerShell;
+
+//using RemotePowerShell;
 
 namespace SQLink
 {
@@ -26,7 +27,7 @@ namespace SQLink
         }
         
 
-        private void ExecutePS_Click(object sender, EventArgs e)
+     /*  private void ExecutePS_Click(object sender, EventArgs e) //do wywalenia execute local stary button
         {
 
             try
@@ -38,7 +39,7 @@ namespace SQLink
             {
                 OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
             }
-        }
+        }*/
 
             private string RunScript(string scriptText)
             {
@@ -62,7 +63,7 @@ namespace SQLink
 
 
 
-        private void FormPowerShellSample_DragDrop(object sender, DragEventArgs e)
+    /*    private void FormPowerShellSample_DragDrop(object sender, DragEventArgs e) // PRZETESTOWAĆ ODPALANIE DROP DOWN SKRYPTOW
         {
             if (e.Data.GetDataPresent(dragDropFormat)) //sprawdza czy to jest prawidłowy rodzaj skryptu
             {
@@ -77,7 +78,7 @@ namespace SQLink
                     }
                 }
             }
-        }
+        }*/
 
         private void FormPowerShellSample_DragEnter(object sender, DragEventArgs e)
         {
@@ -99,7 +100,7 @@ namespace SQLink
 
         }
 
-        private void LastEventLog_Click(object sender, EventArgs e)
+     /*   private void LastEventLog_Click(object sender, EventArgs e)  // do wywalenia event log stary button local
         {
             try
             {
@@ -111,7 +112,7 @@ namespace SQLink
             {
                 OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
             }   
-        }
+        }*/
 
        /* private void TempExeButton_Click(object sender, EventArgs e)   //DELETE
         {
@@ -130,7 +131,7 @@ namespace SQLink
 
         }
 
-        private void RemoteTest_Click(object sender, EventArgs e)
+       /* private void RemoteTest_Click(object sender, EventArgs e)  // TEMP DO KOSZA
         {
             try
             {
@@ -141,7 +142,7 @@ namespace SQLink
             {
                 OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
             }
-        }
+        }*/
 
         private void PSServerIP_TextChanged(object sender, EventArgs e)
         {
@@ -162,7 +163,106 @@ namespace SQLink
                 }
             }
 
+        private void execute_remote_button_Click(object sender, EventArgs e) //remote ps console
+        {
+            try
+            {
+                OutputBox.Clear();
+                OutputBox.Text = RunScript("Invoke-Command -ComputerName " + PSServerIP.Text + " -ScriptBlock {" + InputBox.Text + "}");
+            }
+            catch (Exception PS_ex)
+            {
+                OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
+            }
+        }
+
+        private void execute_local_button_Click(object sender, EventArgs e)  //local ps console
+        {
+            try
+            {
+                OutputBox.Clear();
+                OutputBox.Text = RunScript(InputBox.Text);
+            }
+            catch (Exception PS_ex)
+            {
+                OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
+            }
+        }
+
+
+
+        // private void execute_remote_button_Click(object sender, EventArgs e) //remote ps console
+        // {
+
+        string get_logs_string = "C:\\Users\\Maurycy\\source\\repos\\SQLink\\SQLink\\sql_ink_get_logs.ps1";
+        private void Get_logs_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OutputBox.Clear();
+                OutputBox.Text = RunScript("Invoke-Command -ComputerName " + PSServerIP.Text + " -FilePath " + get_logs_string);
+            }
+            catch (Exception PS_ex)
+            {
+                OutputBox.Text += String.Format("\r\nError in script : {0}\r\n", PS_ex.Message);
+            }
+        }
+
     }
 }
 
 
+
+
+
+//RunScript(@"c:\users\zainnab\AddItUp.ps1")
+//OutputBox.Text = RunScript(Invoke-Command -ComputerName " + PSServerIP.Text + " -FilePath @"C:\Users\Maurycy\source\repos\SQLink\SQLink\sql_ink_get_logs.ps1");
+//Invoke-Command -ComputerName WS2012 -FilePath C:\Users\Maurycy\Desktop\sql_ink_get_logs.ps1
+//OutputBox.Text = RunScript("Invoke-Command -ComputerName " + PSServerIP.Text + "-FilePath C:\Users\Maurycy\Desktop\sql_ink_get_logs.ps1");
+
+
+
+
+
+
+// helper method that takes your script path, loads up the script  (@"C:\Users\Maurycy\source\repos\SQLink\SQLink\sql_ink_get_logs.ps1")
+// into a variable, and passes the variable to the RunScript method 
+// that will then execute the contents 
+/*private string LoadScript(string filename)
+{
+    try
+    {
+        // Create an instance of StreamReader to read from our file. 
+        // The using statement also closes the StreamReader. 
+        using (StreamReader sr = new StreamReader(sql_ink_get_logs.ps1))
+        {
+
+            // use a string builder to get all our lines from the file 
+            StringBuilder fileContents = new StringBuilder();
+
+            // string to hold the current line 
+            string curLine;
+
+            // loop through our file and read each line into our 
+            // stringbuilder as we go along 
+            while ((curLine = sr.ReadLine()) != null)
+            {
+                // read each line and MAKE SURE YOU ADD BACK THE 
+                // LINEFEED THAT IT THE ReadLine() METHOD STRIPS OFF 
+                fileContents.Append(curLine + "\n");
+            }
+
+            // call RunScript and pass in our file contents 
+            // converted to a string 
+            return fileContents.ToString();
+        }
+    }
+    catch (Exception e)
+    {
+        // Let the user know what went wrong. 
+        string errorText = "The file could not be read:";
+        errorText += e.Message + "\n";
+        return errorText;
+    }
+
+}*/

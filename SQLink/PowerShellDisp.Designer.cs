@@ -28,35 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ExecutePS = new System.Windows.Forms.Button();
             this.InputBox = new System.Windows.Forms.TextBox();
             this.OutputBox = new System.Windows.Forms.TextBox();
             this.PSClosewindow = new System.Windows.Forms.Button();
-            this.LastEventLog = new System.Windows.Forms.Button();
             this.PSServerIP = new System.Windows.Forms.TextBox();
-            this.RemoteTest = new System.Windows.Forms.Button();
             this.RDP = new System.Windows.Forms.Button();
+            this.execute_remote_button = new System.Windows.Forms.Button();
+            this.execute_local_button = new System.Windows.Forms.Button();
+            this.Get_logs_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // ExecutePS
-            // 
-            this.ExecutePS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExecutePS.Location = new System.Drawing.Point(903, 51);
-            this.ExecutePS.Name = "ExecutePS";
-            this.ExecutePS.Size = new System.Drawing.Size(84, 29);
-            this.ExecutePS.TabIndex = 0;
-            this.ExecutePS.Text = "Execute";
-            this.ExecutePS.UseVisualStyleBackColor = true;
-            this.ExecutePS.Click += new System.EventHandler(this.ExecutePS_Click);
             // 
             // InputBox
             // 
             this.InputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.InputBox.Location = new System.Drawing.Point(14, 15);
+            this.InputBox.Location = new System.Drawing.Point(9, 10);
+            this.InputBox.Margin = new System.Windows.Forms.Padding(2);
             this.InputBox.Multiline = true;
             this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(883, 253);
+            this.InputBox.Size = new System.Drawing.Size(567, 166);
             this.InputBox.TabIndex = 1;
             this.InputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
             // 
@@ -65,78 +55,91 @@
             this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputBox.Location = new System.Drawing.Point(14, 345);
+            this.OutputBox.Location = new System.Drawing.Point(9, 224);
+            this.OutputBox.Margin = new System.Windows.Forms.Padding(2);
             this.OutputBox.Multiline = true;
             this.OutputBox.Name = "OutputBox";
-            this.OutputBox.Size = new System.Drawing.Size(973, 304);
+            this.OutputBox.Size = new System.Drawing.Size(652, 199);
             this.OutputBox.TabIndex = 2;
             this.OutputBox.TextChanged += new System.EventHandler(this.OutputBox_TextChanged);
             // 
             // PSClosewindow
             // 
             this.PSClosewindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PSClosewindow.Location = new System.Drawing.Point(903, 15);
+            this.PSClosewindow.Location = new System.Drawing.Point(604, 10);
+            this.PSClosewindow.Margin = new System.Windows.Forms.Padding(2);
             this.PSClosewindow.Name = "PSClosewindow";
-            this.PSClosewindow.Size = new System.Drawing.Size(84, 29);
+            this.PSClosewindow.Size = new System.Drawing.Size(56, 19);
             this.PSClosewindow.TabIndex = 3;
             this.PSClosewindow.Text = "Close";
             this.PSClosewindow.UseVisualStyleBackColor = true;
             this.PSClosewindow.Click += new System.EventHandler(this.PSClosewindow_Click);
             // 
-            // LastEventLog
-            // 
-            this.LastEventLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LastEventLog.Location = new System.Drawing.Point(903, 88);
-            this.LastEventLog.Name = "LastEventLog";
-            this.LastEventLog.Size = new System.Drawing.Size(84, 54);
-            this.LastEventLog.TabIndex = 4;
-            this.LastEventLog.Text = "Event Log";
-            this.LastEventLog.UseVisualStyleBackColor = true;
-            this.LastEventLog.Click += new System.EventHandler(this.LastEventLog_Click);
-            // 
             // PSServerIP
             // 
-            this.PSServerIP.Location = new System.Drawing.Point(15, 278);
+            this.PSServerIP.Location = new System.Drawing.Point(10, 181);
+            this.PSServerIP.Margin = new System.Windows.Forms.Padding(2);
             this.PSServerIP.Multiline = true;
             this.PSServerIP.Name = "PSServerIP";
-            this.PSServerIP.Size = new System.Drawing.Size(156, 58);
+            this.PSServerIP.Size = new System.Drawing.Size(105, 39);
             this.PSServerIP.TabIndex = 5;
             this.PSServerIP.TextChanged += new System.EventHandler(this.PSServerIP_TextChanged);
             // 
-            // RemoteTest
-            // 
-            this.RemoteTest.Location = new System.Drawing.Point(908, 151);
-            this.RemoteTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.RemoteTest.Name = "RemoteTest";
-            this.RemoteTest.Size = new System.Drawing.Size(112, 86);
-            this.RemoteTest.TabIndex = 7;
-            this.RemoteTest.Text = "Remote process check";
-            this.RemoteTest.UseVisualStyleBackColor = true;
-            this.RemoteTest.Click += new System.EventHandler(this.RemoteTest_Click);
-            // 
             // RDP
             // 
-            this.RDP.Location = new System.Drawing.Point(912, 245);
+            this.RDP.Location = new System.Drawing.Point(602, 159);
+            this.RDP.Margin = new System.Windows.Forms.Padding(2);
             this.RDP.Name = "RDP";
-            this.RDP.Size = new System.Drawing.Size(78, 50);
+            this.RDP.Size = new System.Drawing.Size(58, 48);
             this.RDP.TabIndex = 8;
             this.RDP.Text = "Remote Desktop";
             this.RDP.UseVisualStyleBackColor = true;
             this.RDP.Click += new System.EventHandler(this.RDP_Click);
             // 
+            // execute_remote_button
+            // 
+            this.execute_remote_button.Location = new System.Drawing.Point(604, 97);
+            this.execute_remote_button.Name = "execute_remote_button";
+            this.execute_remote_button.Size = new System.Drawing.Size(56, 23);
+            this.execute_remote_button.TabIndex = 9;
+            this.execute_remote_button.Text = "Execute";
+            this.execute_remote_button.UseVisualStyleBackColor = true;
+            this.execute_remote_button.Click += new System.EventHandler(this.execute_remote_button_Click);
+            // 
+            // execute_local_button
+            // 
+            this.execute_local_button.Location = new System.Drawing.Point(602, 126);
+            this.execute_local_button.Name = "execute_local_button";
+            this.execute_local_button.Size = new System.Drawing.Size(54, 23);
+            this.execute_local_button.TabIndex = 10;
+            this.execute_local_button.Text = "Local";
+            this.execute_local_button.UseVisualStyleBackColor = true;
+            this.execute_local_button.Click += new System.EventHandler(this.execute_local_button_Click);
+            // 
+            // Get_logs_button
+            // 
+            this.Get_logs_button.Location = new System.Drawing.Point(602, 68);
+            this.Get_logs_button.Name = "Get_logs_button";
+            this.Get_logs_button.Size = new System.Drawing.Size(59, 23);
+            this.Get_logs_button.TabIndex = 11;
+            this.Get_logs_button.Text = "Get logs";
+            this.Get_logs_button.UseVisualStyleBackColor = true;
+            this.Get_logs_button.Click += new System.EventHandler(this.Get_logs_button_Click);
+            // 
             // PowerShellDisp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 665);
+            this.ClientSize = new System.Drawing.Size(670, 432);
+            this.Controls.Add(this.Get_logs_button);
+            this.Controls.Add(this.execute_local_button);
+            this.Controls.Add(this.execute_remote_button);
             this.Controls.Add(this.RDP);
-            this.Controls.Add(this.RemoteTest);
             this.Controls.Add(this.PSServerIP);
-            this.Controls.Add(this.LastEventLog);
             this.Controls.Add(this.PSClosewindow);
             this.Controls.Add(this.OutputBox);
             this.Controls.Add(this.InputBox);
-            this.Controls.Add(this.ExecutePS);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PowerShellDisp";
             this.Text = "PowerShellDisp";
             this.Load += new System.EventHandler(this.FormPowerShellSample_Load);
@@ -146,14 +149,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button ExecutePS;
         private System.Windows.Forms.TextBox InputBox;
         private System.Windows.Forms.TextBox OutputBox;
         private System.Windows.Forms.Button PSClosewindow;
-        private System.Windows.Forms.Button LastEventLog;
         private System.Windows.Forms.TextBox PSServerIP;
-        private System.Windows.Forms.Button RemoteTest;
         private System.Windows.Forms.Button RDP;
+        private System.Windows.Forms.Button execute_remote_button;
+        private System.Windows.Forms.Button execute_local_button;
+        private System.Windows.Forms.Button Get_logs_button;
     }
 }
