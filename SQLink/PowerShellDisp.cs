@@ -4,8 +4,7 @@ using System.Windows.Forms;
 using System.Collections.ObjectModel;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
-
-
+using System.Drawing;
 
 namespace SQLink
 {
@@ -147,5 +146,24 @@ namespace SQLink
             }
         }
 
+        private void PSServerIP_Enter(object sender, EventArgs e)
+        {
+            if (PSServerIP.Text == "Remote Server name")
+            {
+                PSServerIP.Text = "";
+                PSServerIP.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void PSServerIP_Leave(object sender, EventArgs e)
+        {
+            if (PSServerIP.Text == "")
+            {
+                PSServerIP.Text = "Remote Server name";
+                PSServerIP.ForeColor = Color.Silver;
+
+            }
+        }
     }
 }

@@ -73,6 +73,16 @@ namespace SQLink.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ps_ink_kopia {
+            get {
+                object obj = ResourceManager.GetObject("ps_ink kopia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sqlink_kopia {
             get {
                 object obj = ResourceManager.GetObject("sqlink kopia", resourceCulture);
