@@ -78,12 +78,14 @@
             // 
             this.PSServerIP.Dock = System.Windows.Forms.DockStyle.Top;
             this.PSServerIP.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PSServerIP.ForeColor = System.Drawing.Color.Silver;
             this.PSServerIP.Location = new System.Drawing.Point(0, 125);
             this.PSServerIP.Margin = new System.Windows.Forms.Padding(2);
             this.PSServerIP.Multiline = true;
             this.PSServerIP.Name = "PSServerIP";
             this.PSServerIP.Size = new System.Drawing.Size(227, 45);
             this.PSServerIP.TabIndex = 5;
+            this.PSServerIP.Text = "Remote Server name";
             this.PSServerIP.TextChanged += new System.EventHandler(this.PSServerIP_TextChanged);
             this.PSServerIP.Enter += new System.EventHandler(this.PSServerIP_Enter);
             this.PSServerIP.Leave += new System.EventHandler(this.PSServerIP_Leave);
@@ -218,7 +220,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";

@@ -5,22 +5,11 @@ using System.Collections.ObjectModel;
 using System.Management.Automation;
 using System.Management.Automation.Runspaces;
 using System.Drawing;
-using System.Runtime.InteropServices;
 
 namespace SQLink
 {
     public partial class PowerShellDisp : Form
     {
-
-       /* public string text;
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-        */
-
 
         private const string dragDropFormat = "FileDrop";
         public PowerShellDisp()
@@ -31,7 +20,7 @@ namespace SQLink
             private string RunScript(string scriptText)
             {
 
-            Runspace runspace = RunspaceFactory.CreateRunspace();
+                Runspace runspace = RunspaceFactory.CreateRunspace();
                 runspace.Open();
                 Pipeline pipeline = runspace.CreatePipeline();
                 pipeline.Commands.AddScript(scriptText);
@@ -48,29 +37,10 @@ namespace SQLink
             }
 
 
-
-        /*
-        private void FormPowerShellSample_DragDrop(object sender, DragEventArgs e) // PRZETESTOWAĆ ODPALANIE DROP DOWN SKRYPTOW
-        {
-            if (e.Data.GetDataPresent(dragDropFormat)) //sprawdza czy to jest prawidłowy rodzaj skryptu
-            {
-                
-                string[] files = (string[])e.Data.GetData(dragDropFormat); // dragging files onto the window yields an array of pathnames
-
-                if (files.Length > 0)
-                {
-                    using (StreamReader sr = new StreamReader(files[0]))
-                    {
-                        InputBox.Text = sr.ReadToEnd();
-                    }
-                }
-            }
-        }*/
-
-        private void FormPowerShellSample_DragEnter(object sender, DragEventArgs e)
+     /*   private void FormPowerShellSample_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = e.Data.GetDataPresent(dragDropFormat) ? DragDropEffects.Link : DragDropEffects.None; //akceptuje tylko pliki właściwego formatu
-        }
+        }*/
 
         private void FormPowerShellSample_Load(object sender, EventArgs e)
         {

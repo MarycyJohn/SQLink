@@ -16,12 +16,12 @@ namespace SQLink
     public partial class Login : Form
     {
         public static bool AD_auth = false; //warunek do logowania przez Windows Authentication
-        public const int WM_NCLBUTTONDOWN = 0xA1; //przesuwanie okna
+      /*  public const int WM_NCLBUTTONDOWN = 0xA1; //przesuwanie okna
         public const int HT_CAPTION = 0x2;
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
+        public static extern bool ReleaseCapture();*/
 
         public Login()
         {
@@ -195,14 +195,38 @@ namespace SQLink
 
             }
         }
-
+        Point lastPoint;
         private void Login_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void Login_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
             }
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void dbnamebox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
