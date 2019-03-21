@@ -37,17 +37,15 @@
             this.Get_logs_button = new System.Windows.Forms.Button();
             this.PSClosewindow = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // InputBox
@@ -55,25 +53,24 @@
             this.InputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InputBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.InputBox.Location = new System.Drawing.Point(15, 124);
+            this.InputBox.Location = new System.Drawing.Point(21, 125);
             this.InputBox.Margin = new System.Windows.Forms.Padding(2);
             this.InputBox.Multiline = true;
             this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(584, 91);
+            this.InputBox.Size = new System.Drawing.Size(555, 91);
             this.InputBox.TabIndex = 1;
             this.InputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
             // 
             // OutputBox
             // 
-            this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.OutputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OutputBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.OutputBox.Location = new System.Drawing.Point(15, 243);
+            this.OutputBox.Location = new System.Drawing.Point(21, 244);
             this.OutputBox.Margin = new System.Windows.Forms.Padding(2);
             this.OutputBox.Multiline = true;
             this.OutputBox.Name = "OutputBox";
-            this.OutputBox.Size = new System.Drawing.Size(584, 253);
+            this.OutputBox.Size = new System.Drawing.Size(555, 194);
             this.OutputBox.TabIndex = 2;
             this.OutputBox.TextChanged += new System.EventHandler(this.OutputBox_TextChanged);
             // 
@@ -99,10 +96,10 @@
             this.RDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RDP.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RDP.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.RDP.Location = new System.Drawing.Point(0, 304);
+            this.RDP.Location = new System.Drawing.Point(0, 282);
             this.RDP.Margin = new System.Windows.Forms.Padding(2);
             this.RDP.Name = "RDP";
-            this.RDP.Size = new System.Drawing.Size(227, 67);
+            this.RDP.Size = new System.Drawing.Size(227, 56);
             this.RDP.TabIndex = 8;
             this.RDP.Text = "Remote Desktop";
             this.RDP.UseVisualStyleBackColor = false;
@@ -118,7 +115,7 @@
             this.execute_remote_button.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.execute_remote_button.Location = new System.Drawing.Point(0, 170);
             this.execute_remote_button.Name = "execute_remote_button";
-            this.execute_remote_button.Size = new System.Drawing.Size(227, 67);
+            this.execute_remote_button.Size = new System.Drawing.Size(227, 56);
             this.execute_remote_button.TabIndex = 9;
             this.execute_remote_button.Text = "Execute";
             this.execute_remote_button.UseVisualStyleBackColor = false;
@@ -132,9 +129,9 @@
             this.execute_local_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.execute_local_button.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.execute_local_button.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.execute_local_button.Location = new System.Drawing.Point(0, 371);
+            this.execute_local_button.Location = new System.Drawing.Point(0, 338);
             this.execute_local_button.Name = "execute_local_button";
-            this.execute_local_button.Size = new System.Drawing.Size(227, 67);
+            this.execute_local_button.Size = new System.Drawing.Size(227, 56);
             this.execute_local_button.TabIndex = 10;
             this.execute_local_button.Text = "Local";
             this.execute_local_button.UseVisualStyleBackColor = false;
@@ -148,9 +145,9 @@
             this.Get_logs_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Get_logs_button.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Get_logs_button.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Get_logs_button.Location = new System.Drawing.Point(0, 237);
+            this.Get_logs_button.Location = new System.Drawing.Point(0, 226);
             this.Get_logs_button.Name = "Get_logs_button";
-            this.Get_logs_button.Size = new System.Drawing.Size(227, 67);
+            this.Get_logs_button.Size = new System.Drawing.Size(227, 56);
             this.Get_logs_button.TabIndex = 11;
             this.Get_logs_button.Text = "Get logs";
             this.Get_logs_button.UseVisualStyleBackColor = false;
@@ -164,10 +161,10 @@
             this.PSClosewindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PSClosewindow.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PSClosewindow.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.PSClosewindow.Location = new System.Drawing.Point(0, 438);
+            this.PSClosewindow.Location = new System.Drawing.Point(0, 394);
             this.PSClosewindow.Margin = new System.Windows.Forms.Padding(2);
             this.PSClosewindow.Name = "PSClosewindow";
-            this.PSClosewindow.Size = new System.Drawing.Size(227, 67);
+            this.PSClosewindow.Size = new System.Drawing.Size(227, 56);
             this.PSClosewindow.TabIndex = 3;
             this.PSClosewindow.Text = "Close";
             this.PSClosewindow.UseVisualStyleBackColor = false;
@@ -184,18 +181,18 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(637, 0);
+            this.panel1.Location = new System.Drawing.Point(593, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 514);
+            this.panel1.Size = new System.Drawing.Size(227, 460);
             this.panel1.TabIndex = 12;
             // 
-            // panel2
+            // flowLayoutPanel1
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(637, 100);
-            this.panel2.TabIndex = 13;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 100);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(227, 25);
+            this.flowLayoutPanel1.TabIndex = 15;
             // 
             // panel3
             // 
@@ -205,28 +202,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(227, 100);
             this.panel3.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(12, 220);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Output";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(12, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Input";
             // 
             // pictureBox1
             // 
@@ -238,33 +213,47 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
-            // flowLayoutPanel1
+            // panel2
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 100);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(227, 25);
-            this.flowLayoutPanel1.TabIndex = 15;
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(593, 100);
+            this.panel2.TabIndex = 13;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 21);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Server name";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(18, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Output";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(18, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Input";
             // 
             // PowerShellDisp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(864, 514);
+            this.ClientSize = new System.Drawing.Size(820, 460);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -276,12 +265,12 @@
             this.Name = "PowerShellDisp";
             this.Text = "PowerShellDisp";
             this.Load += new System.EventHandler(this.FormPowerShellSample_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PowerShellDisp_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PowerShellDisp_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,6 +292,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
     }
 }

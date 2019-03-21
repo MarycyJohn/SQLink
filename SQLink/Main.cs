@@ -290,6 +290,11 @@ namespace SQLink
             PowerShellDisp test = new PowerShellDisp();
             test.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
