@@ -17,30 +17,24 @@ namespace SQLink
             InitializeComponent();
         }
         
-            private string RunScript(string scriptText)
+            private string Ps_console(string scriptText)
             {
 
-                Runspace runspace = RunspaceFactory.CreateRunspace();
-                runspace.Open();
-                Pipeline pipeline = runspace.CreatePipeline();
-                pipeline.Commands.AddScript(scriptText);
-                pipeline.Commands.Add("Out-String");
-                Collection<PSObject> results = pipeline.Invoke();
-                runspace.Close();
-
-                StringBuilder stringBuilder = new StringBuilder();
-                foreach (PSObject obj in results)
-                {
-                    stringBuilder.AppendLine(obj.ToString());
-                }
-                return stringBuilder.ToString();
+                Runspace ps_ink = RunspaceFactory.CreateRunspace();
+                ps_ink.Open();
+                Pipeline PS_ink_pl = ps_ink.CreatePipeline();
+                PS_ink_pl.Commands.AddScript(scriptText);
+                PS_ink_pl.Commands.Add("Out-String");
+                Collection<PSObject> results = PS_ink_pl.Invoke();
+                ps_ink.Close();
+                StringBuilder ps_ink_sb = new StringBuilder();
+                    foreach (PSObject obj in results)
+                    {
+                        ps_ink_sb.AppendLine(obj.ToString());
+                    }
+                return ps_ink_sb.ToString();
             }
 
-
-     /*   private void FormPowerShellSample_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = e.Data.GetDataPresent(dragDropFormat) ? DragDropEffects.Link : DragDropEffects.None; //akceptuje tylko pliki właściwego formatu
-        }*/
 
         private void FormPowerShellSample_Load(object sender, EventArgs e)
         {
@@ -75,7 +69,7 @@ namespace SQLink
                 try
                 {
                     OutputBox.Clear();
-                    OutputBox.Text = RunScript("mstsc /v:" + PSServerIP.Text);
+                    OutputBox.Text = Ps_console("mstsc /v:" + PSServerIP.Text);
                 }
                 catch (Exception PS_ex)
                 {
@@ -88,7 +82,7 @@ namespace SQLink
             try
             {
                 OutputBox.Clear();
-                OutputBox.Text = RunScript("Invoke-Command -ComputerName " + PSServerIP.Text + " -ScriptBlock {" + InputBox.Text + "}");
+                OutputBox.Text = Ps_console("Invoke-Command -ComputerName " + PSServerIP.Text + " -ScriptBlock {" + InputBox.Text + "}");
             }
             catch (Exception PS_ex)
             {
@@ -101,7 +95,7 @@ namespace SQLink
             try
             {
                 OutputBox.Clear();
-                OutputBox.Text = RunScript(InputBox.Text);
+                OutputBox.Text = Ps_console(InputBox.Text);
             }
             catch (Exception PS_ex)
             {
@@ -115,7 +109,7 @@ namespace SQLink
             try
             {
                 OutputBox.Clear();
-                OutputBox.Text = RunScript("Invoke-Command -ComputerName " + PSServerIP.Text + " -FilePath " + get_logs_string);
+                OutputBox.Text = Ps_console("Invoke-Command -ComputerName " + PSServerIP.Text + " -FilePath " + get_logs_string);
             }
             catch (Exception PS_ex)
             {

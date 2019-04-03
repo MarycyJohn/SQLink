@@ -1,30 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Xml.Linq;
-using System.Configuration;
-using System.Runtime.InteropServices;
+
 
 namespace SQLink
 {
     public partial class Main : Form
     {
-
-        /*public string text;
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-        */
 
         public Main()
         {
@@ -45,6 +29,7 @@ namespace SQLink
                 DataTable dt_dbcheck = new DataTable();
                 SqlDataAdapter da_dbcheck = new SqlDataAdapter(cmd_dbcheck);
                 da_dbcheck.Fill(dt_dbcheck);
+                //MainViewGrid.null
                 MainViewGrid.DataSource = dt_dbcheck;
                 conn_dbcheck.Close();
                 }
@@ -83,7 +68,7 @@ namespace SQLink
 
         }
 
-        private void GoBtn_Click(object sender, EventArgs e) //Execute SQL command button
+        private void GoBtn_Click(object sender, EventArgs e) //Execute SQL
         {
             using (SqlConnection conn_execute = new SqlConnection(DbConnection.ConnectionString))
             {
@@ -165,16 +150,16 @@ namespace SQLink
                     DataTable dt_actConnt = new DataTable();
                     SqlDataAdapter adapter_actConn = new SqlDataAdapter(cmd_actConn);
                     adapter_actConn.Fill(dt_actConnt);
+                    //MainViewGrid.ClearSelection();
                     MainViewGrid.DataSource = dt_actConnt;
                     connection_actConn.Close();
-                }
-                 
+                } 
                 catch (Exception actconn_exception)
-            {
+                {
                 MessageBox.Show(actconn_exception.Message, "SQLink info");
                 return;
+                }
             }
-        }
         }
 
         private void ActiveS_Click(object sender, EventArgs e) //Active session Button
